@@ -1,0 +1,121 @@
+.content {
+    width: 90vw;
+    height: auto;
+    padding: 100px 0px;
+}
+/* ----------------------------------------------------------------------- */
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 100px 0px;
+}
+.index-font {
+    margin: 10px 0px;
+
+    font-family: Gabrielle;
+    color: #583229;
+}
+.head-Sculpture {
+    width: 10rem;
+    border-radius: 10rem;
+    margin: 10px 0px;
+}
+
+.social-Platform ul li{
+    display: inline; 
+    margin: 10px 10px;
+}
+.social-Platform ul li a {
+    text-decoration: none;
+    font-family: iconfont;
+    font-size: 2rem;
+    color: #583229;
+}
+
+.introduce {
+    margin: 10px 0px;
+
+    font-family: Gabrielle;
+    font-size: 3rem;
+    color: #583229;
+}
+
+/* ----------------------------------------------------------------------- */
+
+.post-list {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.posts {
+    width: 100%;
+}
+.post {
+    width: 800px;
+    height: 100px;
+    margin: 10px 0px;
+
+    overflow: hidden;
+
+    border: 3px solid #583229;
+    border-radius: 14px;
+}
+.post a {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    text-decoration: none;
+    color: #583229;
+    margin-left: 30px;
+}
+
+.post-info {
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.post-cover {
+    width: 50%;
+    height: 100%;
+    border-radius: 14px;
+    overflow: hidden;
+}
+.post-cover img {
+    width: 100%;
+}
+
+/* 分页 */
+.page-nav {
+    margin-top: 50px;
+}
+.page-nav a {
+    margin: 5px;
+
+    padding: 5px;
+    border-radius: 10px;
+    border: 3px solid #583229;
+
+    color: #583229;
+    text-decoration: none;
+}
+.page-nav span {
+    margin: 5px;
+
+    padding: 5px;
+    border-radius: 10px;
+
+    color: #583229;
+    text-decoration: none;
+}
