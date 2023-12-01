@@ -1,0 +1,138 @@
+article {
+    
+}
+// 顶开导航栏
+.post-Detali-Guider {
+    width: 100vw;
+    height: 64px;
+}
+.post-Detali-con {
+    width: 80vw;
+    margin: 0 auto;
+    display: flex;
+}
+
+.post-Detali-content {
+    width: 100%;
+    height: calc(100vh - 64px);
+    display: flex;
+    flex-direction: column
+    justify-content: center;
+    align-items: center;
+}
+// 上面封面
+.post-Detali-content-title {
+    width: 100vw;
+    height: 20%;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0px 0px 10px 0px var(--box-shadow-color);
+}
+.post-Detali-content-title-img::after {
+    content: ''; /* 伪元素必须有 content 属性 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* 半透明黑色覆盖层 */
+    pointer-events: none; /* 防止遮挡图片的交互 */
+}
+.post-Detali-content-title-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    position: absolute;
+}
+.post-Detali-content-title-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1;
+    position: absolute;
+
+    color: var(--post-title-text-color);
+}
+.post-Detali-content-title-content h1 {
+    font-size: 40px;
+}
+
+
+// 下面文章
+.post-Detali-content-content {
+    width: 90%;
+    height: 80%;
+    overflow: scroll;
+    padding-top: 30px;
+
+    color: var(--post-content-text-color);
+}
+
+// 文章样式
+.post-Detali-content-content h1 {
+    font-size: 3.5em;
+    margin: 10px 0px;
+    transition: all 1s;
+}
+.post-Detali-content-content h2 {
+    font-size: 3em;
+    margin: 10px 0px;
+}
+.post-Detali-content-content h3 {
+    font-size: 2.5em;
+    margin: 10px 0px;
+}
+.post-Detali-content-content h4 {
+    font-size: 2em;
+    margin: 10px 0px;
+}
+.post-Detali-content-content h5 {
+    font-size: 1.5em;
+    margin: 10px 0px;
+}
+.post-Detali-content-content h6 {
+    font-size: 1em;
+    margin: 10px 0px;
+}
+.post-Detali-content-content h1:hover::before {
+    content: "#";
+    color: rgb(89, 179, 240);
+}
+.post-Detali-content-content h2:hover::before {
+    content: "#";
+    color: rgb(89, 179, 240);
+}
+.post-Detali-content-content h3:hover::before {
+    content: "#";
+    color: rgb(89, 179, 240);
+}
+.post-Detali-content-content h4:hover::before {
+    content: "#";
+    color: rgb(89, 179, 240);
+}
+.post-Detali-content-content h5:hover::before {
+    content: "#";
+    color: rgb(89, 179, 240);
+}
+.post-Detali-content-content h6:hover::before {
+    content: "#";
+    color: rgb(89, 179, 240);
+}
+.post-Detali-content-content p {
+    line-height: 26px;   
+}
+.post-Detali-content-content a {
+    color: var(--post-content-text-color);    
+}
+.post-Detali-content-content blockquote p::before {
+    content: ">";
+}
+.post-Detali-content-content img {
+    width: 100%;
+    padding: 50px;    
+}

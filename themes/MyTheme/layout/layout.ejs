@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<%- partial('_partial/head') %>
+
+    <body>
+        <!-- 加载页面 -->
+        <%- partial('_partial/loading') %>
+        <!-- 网页内容 -->
+        <%- partial('_partial/header') %>
+        <%- body %>
+        <%- partial('_partial/footer') %>
+
+        <!-- 懒加载 -->
+        <%- js('js/be_lazy.js') %>
+    </body>
+
+</html>

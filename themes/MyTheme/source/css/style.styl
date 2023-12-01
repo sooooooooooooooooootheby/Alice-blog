@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: PingFang;
+
+  background-color: var(--body-bg-color);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Cdefs%3E%3Cpattern id='p' width='100' height='100' patternUnits='userSpaceOnUse' patternTransform='scale(0.24)'%3E%3Cpath data-color='outline' fill='none' stroke='%239FD7CC' stroke-width='1.86' d='M50 0v100M100 50H0'%3E%3C/path%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23p)' width='100%25' height='100%25'%3E%3C/rect%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+::selection {
+    background-color: var(--index-text-h1-color);
+    color: var(--post-title-text-color);
+}
+/* Firefox */
+::-moz-selection {
+    background-color: var(--index-text-h1-color);
+    color: var(--post-title-text-color);
+}
+/* WebKit browsers */
+::-webkit-selection {
+    background-color: var(--index-text-h1-color);
+    color: var(--post-title-text-color);
+}
+/* 在线链接服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+@font-face {
+  font-family: 'iconfont';  /* Project id 4335391 */
+  src: url('//at.alicdn.com/t/c/font_4335391_dr6hp380d7p.woff2?t=1701441875209') format('woff2'),
+       url('//at.alicdn.com/t/c/font_4335391_dr6hp380d7p.woff?t=1701441875209') format('woff'),
+       url('//at.alicdn.com/t/c/font_4335391_dr6hp380d7p.ttf?t=1701441875209') format('truetype');
+}
+@font-face {
+  font-family: PingFang;
+  src: url('/ttf/苹方-简.ttf');
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@import "_partial/header";
+@import "_partial/footer";
+@import "_partial/codeBlock";
+@import "_partial/loading";
+@import "index";
+@import "post";
+@import "theme";

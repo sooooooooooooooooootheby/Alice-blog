@@ -1,0 +1,21 @@
+<div id="loading-page">
+    <img class="loading-page-img" src="https://pic.imgdb.cn/item/6511b165c458853aef7ae7b9.png" alt="头像">
+    <div class="spinner">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <span class="loading-page-span">Bolg from Ririsu-Kokoromu๑•ิ.•ั๑</span>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // 等待所有内容加载完毕后隐藏加载页面
+            window.addEventListener("load", function () {
+                document.getElementById("loading-page").style.display = "none";
+                document.getElementById("content").style.display = "block"; // 显示网页内容
+            });
+        });
+    </script>
+</div>
