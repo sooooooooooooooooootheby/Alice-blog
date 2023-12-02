@@ -20,24 +20,29 @@ header {
     font-weight: blog;  
 }
 .headerPCLeftLogo img {
-    width: 44px;
-    height: 44px;
+    width: 32px;
+    height: 32px;
 }
 .headerPCLeftTitle a {
+    font-weight: bold;
     text-decoration: none;
     color var(--header-text-color);
+}
+.headerRightSwitchInput {
+  display: none;  
 }
 
 // 右边
 .headerPCRight {
     display: flex;
-    align-items: center
-}
-.headerPCRight>div {
-    margin: 0px 10px
+    align-items: center;
 }
 // 开关
+.headerPCRightLight-dark {
+  margin: 0px 10px;  
+}
 .theme-switch {
+  
   --toggle-size: 10px;
   /* the size is adjusted using font-size,
      this is not transform scale,
@@ -243,4 +248,16 @@ header {
 }
 .headerPCRightSocialize ul li a:hover {
     color #16A085;
+}
+
+
+// 隐藏移动端
+.headerRightSwitch {
+  display: none;  
+}
+.headerPCRightLink {
+  display: none;  
+}
+.headerPCRightLight-dark p {
+  display: none;
 }

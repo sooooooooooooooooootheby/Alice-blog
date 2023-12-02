@@ -1,0 +1,167 @@
+@media screen and (max-width: 950px) { 
+    // 导航栏
+    .headerPC {
+        justify-content: space-between;
+        
+    }
+    .headerPCLeft {
+        margin-left: 20px;    
+    }
+    .headerRightSwitch {
+        display: flex;
+        font-size: 30px;
+        color: var(--header-text-color);
+        margin-right: 20px;
+    }
+    .headerRightSwitchInput {
+        display: none;
+    }
+    .headerRightSwitchInput:checked + .headerPCRight {
+        // display: flex;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .headerPCRight {
+        width: 100vw;
+        height: calc(100vh - 64px);
+        position: absolute;
+        top: 64px;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        opacity: 0; /* 默认隐藏 */
+        transition: opacity 0.5s ease-in-out; /* 添加渐显的过渡效果 */
+        pointer-events: none; /* 关键：使元素不接受鼠标事件，可以让下面的元素穿透 */
+
+        background-color: var(--box-blur-color);
+        backdrop-filter: blur(10px);
+    }
+
+    .headerPCRightLink {
+        width: 80%;
+        display: flex;
+        flex-direction: column;  
+        margin-bottom: 50px;  
+    }
+    .headerPCRightLink ul li {
+        color: var(--box-text-color);
+        border-bottom: 1px solid #16A085;
+        list-style: none;
+        margin-bottom: 10px;
+    }
+    .headerPCRightLink ul li a {
+        text-decoration: none;
+        line-height: 50px;
+        color: var(--box-text-color);
+        font-size: 15px;
+        font-weight: bold;
+    }
+    .headerPCRightLight-dark {
+        width: 80%;
+        margin: 20px 0px;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        background-color: rgba(58, 223, 190,0.2);
+        border-radius: 8px; 
+    }
+    .headerPCRightLight-dark p {
+        display: block;
+        color: var(--box-text-color);
+        font-size: 15px;
+    }
+    .headerPCRightInterval {
+        display: none; 
+    }
+
+
+
+    // 主页
+    .indexContentHeader {
+        flex-direction: column;   
+        justify-content: center !important; 
+    }
+    .indexContentHeaderLeft {
+        order: 1;
+        align-items: center
+    }
+    .indexContentHeaderLeft h1 {
+        font-size: 40px !important;
+    }
+    .indexContentHeaderLeft h3 {
+        font-size: 30px !important;
+    }
+    .indexContentHeaderLeft h5 {
+        font-size: 20px !important;
+    }
+    .indexContentHeaderLeft h5 img {
+        width: 30px !important;    
+        height: 30px !important; 
+        margin: 0 !important; 
+    }
+    .indexContentHeaderRight {
+        width: 150px !important;
+        height: 150px !important;
+    }
+    .indexContentHeaderRight img{
+        width: 150px !important;
+        height: 150px !important;
+    }
+    .indexContentHeaderRightBG {
+        width: 150px !important;
+        height: 150px !important;
+    }
+    .indexContentArticle a {
+        color: #fff
+    }
+
+    .indexContentArticleBox {
+        width: 90% !important;    
+    }
+    .postRight {
+        display: none;    
+    }
+
+
+
+    //文章页
+    .post-Detali-con {
+        width: 100vw !important;    
+    }
+    .post-Detali-content-content {
+        width: 80% !important;    
+    }
+    .post-Detali-content-title-content {
+        white-space: nowrap; /* 防止文本换行 */
+        overflow: hidden;
+        text-overflow: ellipsis; /* 显示省略号 */
+    }
+    .post-Detali-content-title-content span {
+        display: none;
+    }
+    figure {
+        overflow: scroll;
+    }
+    .post-Detali-content-content img {
+        padding: 0 !important;    
+    }
+
+
+
+    //页脚
+    footer {
+        height: 200px;
+        flex-direction: column;
+    }
+    footer img {
+        width: 60px;
+        height: 60px;
+        margin: 10px 0;
+    }
+}
