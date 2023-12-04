@@ -6,15 +6,8 @@ article {
     width: 100vw;
     height: 64px;
 }
-.post-Detali-con {
-    width: 80vw;
-    margin: 0 auto;
-    display: flex;
-}
-
 .post-Detali-content {
     width: 100%;
-    height: calc(100vh - 64px);
     display: flex;
     flex-direction: column
     justify-content: center;
@@ -23,9 +16,10 @@ article {
 // 上面封面
 .post-Detali-content-title {
     width: 100vw;
-    height: 20%;
+    height: 300px;
     overflow: hidden;
     position: relative;
+    z-index: 10;
     box-shadow: 0px 0px 10px 0px var(--box-shadow-color);
 }
 .post-Detali-content-title-img::after {
@@ -61,23 +55,64 @@ article {
 .post-Detali-content-title-content h1 {
     font-size: 40px;
 }
+.post-Detali-content-title-content span {
+    display: none;
+}
 
 
 // 下面文章
 .post-Detali-content-content {
-    width: 60%;
-    height: 80%;
-    overflow: scroll;
-    padding-top: 30px;
+    max-width: 40%;
+    padding: 20px 60px 0px 60px;
+    box-shadow: 0px 0px 10px 1px #333;
 
+    background-color: var(--post-content-bg-color);
     color: var(--post-content-text-color);
+}
+
+// 评论区
+.vpanel {
+    background-image: url(https://pic.imgdb.cn/item/656dc68ac458853aef083a11.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: rgb(249, 248, 244);
+    resize: vertical;
+    border-radius: 20px;
+}
+.vwrap {
+    border: 0px !important;
+}
+.vempty {
+    color: var(--post-content-text-color);   
+}
+.vcard {
+    padding: 20px;
+    border-radius: 20px
+    background-color: rgb(249, 248, 244);
+}
+.vemojis {
+    flex-wrap: wrap;    
+}
+.vemojis i {
+    margin: 5px;    
+}
+.v[data-class=v] .vemoji, .v[data-class=v] .emoji {
+    width: 40px !important;
+    height: 40px !important;
+    margin: 2px;
+}
+.v[data-class=v] img {
+    max-width: none !important;    
+}
+.post-Detali-content-content img {
+    padding: 0% !important;
 }
 
 // 文章样式
 .post-Detali-content-content h1 {
     font-size: 3.5em;
     margin: 10px 0px;
-    transition: all 1s;
 }
 .post-Detali-content-content h2 {
     font-size: 3em;
@@ -99,32 +134,13 @@ article {
     font-size: 1em;
     margin: 10px 0px;
 }
-.post-Detali-content-content h1:hover::before {
+.post-Detali-content-content h1:hover::before, h2:hover::before, h3:hover::before, h4:hover::before, h5:hover::before, h6:hover::before {
     content: "#";
-    color: rgb(89, 179, 240);
-}
-.post-Detali-content-content h2:hover::before {
-    content: "#";
-    color: rgb(89, 179, 240);
-}
-.post-Detali-content-content h3:hover::before {
-    content: "#";
-    color: rgb(89, 179, 240);
-}
-.post-Detali-content-content h4:hover::before {
-    content: "#";
-    color: rgb(89, 179, 240);
-}
-.post-Detali-content-content h5:hover::before {
-    content: "#";
-    color: rgb(89, 179, 240);
-}
-.post-Detali-content-content h6:hover::before {
-    content: "#";
-    color: rgb(89, 179, 240);
+    color: #1C304A;
 }
 .post-Detali-content-content p {
-    line-height: 26px;   
+    line-height: 26px;  
+    font-size: 16px; 
 }
 .post-Detali-content-content a {
     color: var(--post-content-text-color);    
@@ -133,6 +149,7 @@ article {
     content: ">";
 }
 .post-Detali-content-content img {
-    width: 100%;
-    padding: 50px;    
+    width: 80%;
+    // margin: 0 auto;
+    padding: 10%;    
 }

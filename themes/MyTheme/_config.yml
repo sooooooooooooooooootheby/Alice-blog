@@ -1,1 +1,9 @@
-highlight_theme: night eighties
+valine:
+  enable: true # 是否开启
+  appId: oiMwEQjnLkcATBsd7rmnxwCf-gzGzoHsz
+  appKey: nxYKJ10KXUR23EROEtXI3qBK
+  visitor: true # 访客数量
+  avatar: 'retro' # 头像展示方式 Gravatar style : mm/identicon/monsterid/wavatar/retro/hide
+  pageSize: 10 # 一页显示的评论数
+  placeholder: 'just go go' # 评论框占位文本
+  background: /medias/comment_bg.png # 评论框背景
