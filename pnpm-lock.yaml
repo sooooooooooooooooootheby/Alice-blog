@@ -11,6 +11,9 @@ dependencies:
   hexo-browsersync:
     specifier: ^0.3.0
     version: 0.3.0
+  hexo-cli:
+    specifier: ^4.3.1
+    version: 4.3.1
   hexo-generator-archive:
     specifier: ^2.0.0
     version: 2.0.0
