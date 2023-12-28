@@ -1,11 +1,13 @@
 ---
 abbrlink: ''
 categories:
-- - GSAP
+- - 动画库
+- - 前端
 date: '2023-12-28T17:07:41.057842+08:00'
-tags: []
+tags:
+- GSAP
 title: GSAP|动画库入门
-updated: '2023-12-28T17:44:18.196+08:00'
+updated: '2023-12-28T18:04:58.099+08:00'
 ---
 # 安装
 
@@ -78,4 +80,34 @@ gsap.set(".box", {
 
 ## target
 
-GSAP选择
+GSAP选择元素的方式有多种，除了上面使用的class选择还可以使用id选择
+
+```javascript
+gsap.to("#box4", {
+            x: 200,
+        })
+```
+
+特殊选择器
+
+```javascript
+gsap.to("section > .box5", {
+            x: 200,
+        });
+```
+
+因为是javascript语法所以还可以通过 `document.querySelecto `使用变量选择元素
+
+```javascript
+#单个元素
+let box = document.querySelector(".box6");
+gsap.to(box, {
+            x: 200,u
+        });
+#多个元素
+let box1 = document.querySelector(".box7");
+let box2 = document.querySelector(".box8");
+gsap.to([box1,box2], {
+            x: 200,
+        });
+```
