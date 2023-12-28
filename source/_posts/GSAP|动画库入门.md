@@ -3,7 +3,7 @@ abbrlink: ''
 categories: []
 date: '2023-12-28T17:07:41.057842+08:00'
 tags: []
-title: GSAP|动画库入门
+title: GSAP I 动画库入门
 updated: '2023-12-28T18:29:06.004+08:00'
 ---
 # 安装
