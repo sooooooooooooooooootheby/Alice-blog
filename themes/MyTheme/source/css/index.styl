@@ -2,13 +2,19 @@
     width: 100vw;
 }
 .indexContentHeader {
-    width: 100%;
+    max-width: 50%;
     height: 100vh;
+    margin: 0 auto;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    flex-direction: column;
 }
 
+.indexContentHeaderUp {
+    height: 55%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
 // 文本
 .indexContentHeaderLeft {
     display: flex;
@@ -41,17 +47,6 @@
     width: 60px;
     height: 60px
 }
-// 技术
-.indexContentHeaderLeft ul {
-    display: flex;    
-    font-size: 30px; 
-    font-weight: bold;
-    color: var(--index-text-h3-color);
-}
-.indexContentHeaderLeft ul li {
-    list-style: none;
-}
-
 
 // 头像
 .indexContentHeaderRight{
@@ -78,6 +73,59 @@
     top: 0px;
     right: 0px;
     z-index -1;
+}
+
+// 技术
+.indexContentHeaderDown {
+    order: 1;
+    margin-top: 50px;
+}
+.indexContentHeaderDown>p {
+    padding: 10px 0px;
+    color: var(--index-text-h3-color);
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 2px solid var(--index-text-h3-color);
+}
+.indexContentHeaderDown ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.indexContentHeaderDown ul li {
+    list-style: none;
+    padding: 15px 0px 15px 15px;
+    margin: 10px;
+    background-color: #16A085;
+    border-radius: 10px;
+}
+.indexContentHeaderDown ul li>p {
+    color: aliceblue;
+    font-size: 15px; 
+    margin: 10px 0px;   
+}
+.indexContentHeaderDown ul li div {
+    display: flex;    
+}
+.indexContentHeaderDown ul li div svg {
+    font-size: 30px; 
+    padding: 10px;
+    background-color: aliceblue;    
+    border-radius: 10px;
+}
+.indexContentHeaderDown ul li div img {
+    width: 30px;
+    height: 30px;
+    font-size: 30px; 
+    padding: 10px;
+    background-color: aliceblue;    
+    border-radius: 10px;
+}
+.indexContentHeaderDown ul li div p {
+    color: aliceblue;
+    line-height: 50px;
+    margin-left: 10px;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 
