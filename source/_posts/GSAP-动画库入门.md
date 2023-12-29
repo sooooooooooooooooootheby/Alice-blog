@@ -8,11 +8,11 @@ tags:
 - GSAP
 - 动画库
 title: GSAP-动画库入门
-updated: '2023-12-29T17:04:16.232+08:00'
+updated: '2023-12-29T17:09:06.812+08:00'
 ---
 # 安装
 
-```
+```shell && html
 # 通过pnpm安装
 pnpm install gsap
 
@@ -111,4 +111,72 @@ let box2 = document.querySelector(".box8");
 gsap.to([box1,box2], {
             x: 200,
         });
+```
+
+## 变量
+
+简写
+
+GSAP将原有的css写法转换成了GSAP的简写写法
+
+|             GSAP             |                 CSS                 |              作用              |
+| :---------------------------: | :---------------------------------: | :----------------------------: |
+|             x:100             |          translateX(100px)          |         向右移动100px         |
+|            y: 100            |          translateY(100px)          |         向下移动100px         |
+|         xPercent: 50         |           translateX(50%)           |          向右移动50%          |
+|         yPercent: 50         |           translateY(50%)           |          向下移动50%          |
+|           scale: 2           |              scale(2)              |            逐渐变大            |
+|           scaleX: 2           |              scaleX(2)              |          水平方向增长          |
+|           scaleY: 2           |              scaleY(2)              |          垂直方向增长          |
+|         rotation: 90         |            rotate(90deg)            |        顺时针旋转90deg        |
+|      rotation: "1.25rad"      |               no css               |       顺时针旋转1.25rad       |
+|           skew: 30           |             skew(30deg)             |         倾斜旋转30deg         |
+|           skewX: 30           |            skewX(30deg)            |       水平倾斜旋转30deg       |
+|       skewY: "1.23rad"       |               no css               |      垂直倾斜旋转1.25rad      |
+| transformOrigin: "center 40%" |    transform-origin: center 40%    |         更改旋转的原点         |
+|          opacity: 0          |     adjust the elements opacity     |             可见度             |
+|         autoAlpha: 0         | shorthand for opacity & visibility |            不透明度            |
+|          duration: 1          |       animation-duration: 1s       |           动画时长1S           |
+|          repeat: -1          | animation-iteration-count: infinite |        重复（一直重复）        |
+|           repeat: 2           |    animation-iteration-count: 2    |       重复（重复1+2次）       |
+|           delay: 2           |         animation-delay: 2         |         延迟2S播放动画         |
+|          yoyo: true          |   animation-direction: alternate   | 从头到尾再到头，配合repeat使用 |
+
+> 一般来说，GSAP可以使用任意常用单位，例如：px,deg,vw,rad甚至js计算或相对值
+>
+> ```javascript
+> x: 200, // 默认使用px
+> x: "+=200" // 相对值
+> x: '40vw', // 传入带单位的字串符
+> x: () => window.innerWidth / 2, // 使用函数计算！
+>   
+> rotation: 360 // 默认deg
+> rotation: "1.25rad" // 使用弧度
+> ```
+>
+
+##### CSS属性
+
+GSAP支持几乎所有的原生CSS样式，只需要使用驼峰命名法！
+
+例如 `background-color ` => `backgroundColor`
+
+```javascript
+gsap.to(".box", {
+            x: 200,
+            backgroundColor: '#583229',
+        });
+```
+
+##### SVG属性
+
+像CSS一样，你可以直接放进 `tween`中使用，也可以使用对象
+
+```javascript
+gsap.to(".box", {
+            attr: {
+                fill: '#8d3dae',
+                rx: 50,
+            },
+        });
 ```
