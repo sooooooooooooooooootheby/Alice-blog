@@ -86,9 +86,27 @@
 
 
     // 主页
+    .indexContent {
+        width: 100vw;    
+    }
     .indexContentHeader {
+        margin-top: 100px;
+        max-width: 90%;
+        height: auto;
+    }
+    .indexContentHeaderUp {
+        display: flex;
         flex-direction: column;   
         justify-content: center; 
+        align-items: center;
+    }
+    .indexContentHeaderDown {
+        display: flex;
+        flex-direction: column;    
+    }
+    .indexContentHeaderDown ul {
+        display: flex;
+        flex-direction: column;    
     }
     .indexContentHeaderLeft {
         order: 1;
@@ -122,6 +140,9 @@
     }
     .indexContentArticleBox {
         width: 90%;    
+    }
+    .postLeft {
+        width: 88%;    
     }
     .postRight {
         display: none;    

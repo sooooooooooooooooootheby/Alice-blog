@@ -13,12 +13,13 @@ document.addEventListener("visibilitychange", function () {
         }, 2000);
     }
 });
-let msg = "%c 💚 Our site is very new. Let us know if you find any issues 💚";
+let msg = "%c💚 今天你想看些什么呢 💚";
 let styles = [
     "font-size: 12px",
-    "color: #fffce1",
-    "font-family: monospace",
-    "background: #0e100f",
+    "color: aliceblue",
+    "font-family: PingFang",
+    "font-width: bold",
+    "background: #16A085",
     "display: inline-block",
     "padding: 1rem 3rem",
     "border: 1px solid #fffce1",
