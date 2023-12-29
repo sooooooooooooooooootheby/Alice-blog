@@ -26,3 +26,7 @@ let styles = [
     "border-radius: 4px;",
 ].join(";");
 console.log(msg, styles);
+console.log(
+    "%c",
+    "padding: 300px; background: url(https://pic.imgdb.cn/item/658e9da0c458853aef0cfbde.gif) no-repeat;"
+);
