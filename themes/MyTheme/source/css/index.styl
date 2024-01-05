@@ -1,39 +1,46 @@
 .indexContent {
     width: 100vw;
 }
+.indexGuider {
+    width: 100vw;
+    height: 64px;    
+}
+// 主页头部
 .indexContentHeader {
-    max-width: 50%;
-    height: 100vh;
+    max-width: 60%;
+    height: calc(100vh - 64px);
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
+// 头部上面的文字和头像
 .indexContentHeaderUp {
-    height: 50%;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
 }
-// 文本
+// 文字
 .indexContentHeaderLeft {
     display: flex;
     flex-direction: column;
     justify-content: center;  
     
-    text-shadow: -10px 5px 10px;
+    text-shadow: 25px 20px 8px;
+    font-weight: bold;
 }
 .indexContentHeaderLeft h1 {
     color: var(--index-text-h1-color);
-    font-size: 82px;
+    font-size: 52px;
 }
 .indexContentHeaderLeft h3 {
     color: var(--index-text-h3-color);
-    font-size: 62px;
+    font-size: 42px;
 }
 .indexContentHeaderLeft h5 {
-    color: var(--index-text-h3-color);
-    font-size: 48px;
+    color: var(--index-text-h5-color);
+    font-size: 28px;
 }
 .indexContentHeaderLeft h3:hover::before {
     content: "";
@@ -44,19 +51,20 @@
 .indexContentHeaderLeft h5 img {
     position: absolute;
     margin: 10px 0px 0px 10px 
-    width: 60px;
-    height: 60px
+    width: 30px;
+    height: 30px
 }
 
 // 头像
 .indexContentHeaderRight{
-    width: 320px;
-    height: 320px;
+    width: 200px;
+    height: 200px;
+    margin-right: 100px;
     position relative;
 }
 .indexContentHeaderRight img{
-    width: 320px;
-    height: 320px;
+    width: 200px;
+    height: 200px;
     border-radius: 320px;
     position: absolute;
     top: 0px;
@@ -64,10 +72,10 @@
     z-index: 1;
 }
 .indexContentHeaderRightBG {
-    width: 320px;
-    height: 320px;
+    width: 200px;
+    height: 200px;
     background-color: #16A085;
-    box-shadow: -30px -100px 100px 100px rgba(22, 160, 133 , 25%);
+    box-shadow: 0px 0px 120px 60px rgba(22, 160, 133 , 25%);
     border-radius: 310px;
     position: absolute;
     top: 0px;
@@ -75,7 +83,8 @@
     z-index -1;
 }
 
-// 技术
+
+// 头部下面的技术
 .indexContentHeaderDown {
     order: 1;
     margin-top: 50px;
