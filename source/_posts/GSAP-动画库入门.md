@@ -217,7 +217,7 @@ gsap.to(".box", {
 
 `Staggers`可以配合Grid网格布局使用，做出很惊艳的群体动画效果
 
-[官方的示例Demo（需要往下划一些)](https://gsap.com/resources/getting-started/Staggers#advanced-configuration)
+[官方的示例Demo](https://gsap.com/resources/getting-started/Staggers#advanced-configuration)
 
 ```javascript
 stagger: {
