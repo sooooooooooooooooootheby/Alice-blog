@@ -8,7 +8,7 @@ tags:
 - GSAP
 - 动画库
 title: GSAP-动画库入门
-updated: '2024-01-01T20:48:22.069+08:00'
+updated: '2024-01-05T18:08:31.668+08:00'
 ---
 # 安装
 
@@ -188,4 +188,6 @@ gsap.to(".box", {
 
 第二个值 `out`可以更换为 `in`或者 `inOut`，三个值的区别在于 `in`是动画开头时开始缓和效果，`out`是动画结束时开始缓和效果（直白一点就是把函数正反表示）
 
-![](https://ririsukokoromu.top/article/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-01-01%20210522.png)![](https://ririsukokoromu.top/article/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-01-01%20210522.png)![](flies.ririsukokoromu.top/RirisuBlogPicStash/RirisuBlogPicStash//)![](https://flies.ririsukokoromu.top/easeVisualizer.png)
+[官方的小实验场](https://gsap.com/resources/getting-started/Easing)
+
+![easing](http://pic.yupoo.com/ririsukokoromu/4b48a1b2/e0352558.jpg)
