@@ -8,11 +8,11 @@ tags:
 - GSAP
 - 动画库
 title: GSAP-动画库入门
-updated: '2023-12-29T17:09:06.812+08:00'
+updated: '2024-01-05T18:33:33.360+08:00'
 ---
 # 安装
 
-```shell && html
+```shell
 # 通过pnpm安装
 pnpm install gsap
 
@@ -25,7 +25,7 @@ yarn add gsap
 
 # 开始使用
 
-## tween
+### tween
 
 ##### gsap.to
 
@@ -79,7 +79,7 @@ gsap.set(".box", {
         })
 ```
 
-## target
+### target
 
 GSAP选择元素的方式有多种，除了上面使用的class选择还可以使用id选择
 
@@ -113,7 +113,7 @@ gsap.to([box1,box2], {
         });
 ```
 
-## 变量
+### 变量
 
 简写
 
@@ -153,7 +153,6 @@ GSAP将原有的css写法转换成了GSAP的简写写法
 > rotation: 360 // 默认deg
 > rotation: "1.25rad" // 使用弧度
 > ```
->
 
 ##### CSS属性
 
@@ -180,3 +179,15 @@ gsap.to(".box", {
             },
         });
 ```
+
+### Easing
+
+这个变量 `ease: "none.out",`可以给动画加一个缓和的效果
+
+第一个值 `none`需要填写GSAP官方提供的几种动画类型名称，例如 `power1`,`back`,`bounce`;
+
+第二个值 `out`可以更换为 `in`或者 `inOut`，三个值的区别在于 `in`是动画开头时开始缓和效果，`out`是动画结束时开始缓和效果（直白一点就是把函数正反表示）
+
+[官方的小实验场](https://gsap.com/resources/getting-started/Easing)
+
+![easing](http://pic.yupoo.com/ririsukokoromu/4b48a1b2/e0352558.jpg)
