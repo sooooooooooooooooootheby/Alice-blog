@@ -62,7 +62,7 @@ article {
 
 // 下面文章
 .post-Detali-content-content {
-    max-width: 40%;
+    max-width: 55%;
     padding: 20px 60px 0px 60px;
     box-shadow: 0px 0px 10px 1px #333;
 
@@ -113,6 +113,17 @@ article {
 }
 
 // 文章样式
+blockquote {
+    margin: 10px;
+    padding: 20px 20px 1px 20px;
+    border-radius: 20px;
+    background-color: aliceblue;
+}
+blockquote p {
+    color: #333;
+    padding-left: 10px;
+    border-left: 2px solid #333;
+}
 .post-Detali-content-content h1 {
     font-size: 3.5em;
     margin: 10px 0px;
@@ -137,9 +148,9 @@ article {
     font-size: 1em;
     margin: 10px 0px;
 }
-.post-Detali-content-content h1:hover::before, h2:hover::before, h3:hover::before, h4:hover::before, h5:hover::before, h6:hover::before {
-    content: "#";
-    color: #1C304A;
+.post-Detali-content-content h1:hover::after, h2:hover::after, h3:hover::after, h4:hover::after, h5:hover::after, h6:hover::after {
+    content: " #";
+    color: var(--index-text-h1-color);
 }
 .post-Detali-content-content p {
     line-height: 26px;  
@@ -148,11 +159,18 @@ article {
 .post-Detali-content-content a {
     color: var(--post-content-text-color);    
 }
-.post-Detali-content-content blockquote p::before {
-    content: ">";
-}
 .post-Detali-content-content img {
-    width: 80%;
+    width: 100%;
+}
+.post-Detali-content-content table {
+    border: 2px solid #555;
+    border-radius: 10px;
+    padding: 10px;    
     margin: 0 auto;
-    padding: 10%;    
+}
+.post-Detali-content-content thead {
+    margin-bottom: 5px;  
+}
+.post-Detali-content-content tbody {
+    margin: 5px 0px;    
 }
