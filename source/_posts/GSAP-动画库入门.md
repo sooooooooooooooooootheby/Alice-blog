@@ -8,11 +8,11 @@ tags:
 - GSAP
 - 动画库
 title: GSAP-动画库入门
-updated: '2023-12-29T17:09:06.812+08:00'
+updated: '2024-01-05T18:08:31.668+08:00'
 ---
 # 安装
 
-```shell && html
+```shell
 # 通过pnpm安装
 pnpm install gsap
 
@@ -25,7 +25,7 @@ yarn add gsap
 
 # 开始使用
 
-## tween
+### tween
 
 ##### gsap.to
 
@@ -79,7 +79,7 @@ gsap.set(".box", {
         })
 ```
 
-## target
+### target
 
 GSAP选择元素的方式有多种，除了上面使用的class选择还可以使用id选择
 
@@ -113,7 +113,7 @@ gsap.to([box1,box2], {
         });
 ```
 
-## 变量
+### 变量
 
 简写
 
@@ -153,7 +153,6 @@ GSAP将原有的css写法转换成了GSAP的简写写法
 > rotation: 360 // 默认deg
 > rotation: "1.25rad" // 使用弧度
 > ```
->
 
 ##### CSS属性
 
@@ -179,4 +178,58 @@ gsap.to(".box", {
                 rx: 50,
             },
         });
+```
+
+### Easing
+
+`ease: "none.out"`可以给动画加一个缓和的效果
+
+第一个值 `none`需要填写GSAP官方提供的几种动画类型名称，例如 `power1`,`back`,`bounce`;
+
+第二个值 `out`可以更换为 `in`或者 `inOut`，三个值的区别在于 `in`是动画开头时开始缓和效果，`out`是动画结束时开始缓和效果（直白一点就是把函数正反表示）
+
+[官方的曲线实验场](https://gsap.com/resources/getting-started/Easing)
+
+![easing](http://pic.yupoo.com/ririsukokoromu/4b48a1b2/e0352558.jpg)
+
+### Staggers
+
+(说真的官方的命名真的很抽象，我真的不知道该怎么翻译他们）
+
+`Staggers`这个变量可以让多个元素按顺序触发
+
+```javascript
+<div class="box red"></div>
+<div class="box yellow"></div>
+<div class="box blue"></div>
+<div class="box green"></div>
+  
+<script>
+    gsap.to(".box",{
+        x: 300,
+        // 当stagger设置为0.3时，yellow会在red动画结束后0.3s触发自己的动画，之后的元素以此类推
+        stagger: 0.3,
+    })
+</script>
+```
+
+##### 配合Grid网格布局的高级用法
+
+`Staggers`可以配合Grid网格布局使用，做出很惊艳的群体动画效果
+
+[官方的示例Demo](https://gsap.com/resources/getting-started/Staggers#advanced-configuration)
+
+```javascript
+stagger: {
+    // 你的网格布局拥有[多少行,多少列]
+    grid: [13, 8],
+    // 动画开始播放的位置，可以设置为[center,end,edges,random,ll]
+    from: "center",
+    // 侧重的轴，可以设置为x或y，不设置则从中心开始变化
+    axis: "y",
+    // 动画缓动效果，参考上一节内容
+    ease: "none",
+    // 总时长,过大过小会导致所有元素同步运动
+    amount: 0.7,
+}
 ```
