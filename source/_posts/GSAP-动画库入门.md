@@ -8,7 +8,7 @@ tags:
 - GSAP
 - 动画库
 title: GSAP-动画库入门
-updated: '2024-01-05T18:08:31.668+08:00'
+updated: '2024-01-14T17:12:27.431+08:00'
 ---
 # 安装
 
@@ -232,4 +232,86 @@ stagger: {
     // 总时长,过大过小会导致所有元素同步运动
     amount: 0.7,
 }
+```
+
+### TimeLines
+
+标题比较显而易见，是时间线。时间线可以让多个元素的动画调整变得更加的容易。
+
+```javascript
+// 要使用时间线，不能直接使用gsap.to或者gsap.timeline().to，必须要声明一个变量。
+let tl = gsap.timeline();
+
+// 在这之后就和之前所学的一样添加duration(动画播放时长)即可，元素动画将会按照顺序播放
+tl.to(".div1",{
+x: 300,
+duration: 2,
+});
+tl.to(".div2",{
+x: 300,
+duration: 1,
+});
+tl.to(".div3",{
+x: 300,
+duration: 2,
+});
+```
+
+如果你需要给动画添加一点点的延迟，只需要使用变量 `delay`即可
+
+```javascript
+tl.to(".div1",{
+    x: 300,
+    duration: 2,
+});
+tl.to(".div2",{
+    x: 300,
+    duration: 1,
+    // 注意，变量 delay 必须要添加到需要延迟的元素上，例如此处添加到div2，动画的播放将会在div1播放完毕之后停顿1S再继续播放div2的动画
+    delay: 1,
+});
+tl.to(".div3",{
+    x: 300,
+    duration: 2,
+});
+```
+
+##### 位置参数
+
+`gsap.timeline()`还提供了一个位置参数，可以用来调整元素动画在时间轴中播放的位置
+
+```javascript
+tl.to(".div1",{
+    x: 600,
+    duration: 2,
+// 在时间轴开始播放后3S开始播放动画
+},3);
+tl.to(".div2",{
+    x: 600,
+    duration: 1,
+// 在上一个元素动画播放前3S开始播放动画
+},"-=3");
+tl.to(".div3",{
+    x: 600,
+    duration: 2,
+// 在上一个元素动画播放后3S开始播放动画
+},"+=3");
+tl.to(".div4",{
+    x: 600,
+    duration: 2,
+// 在上一个元素动画播放后3S开始播放动画
+},"<");
+```
+
+##### 特殊参数
+
+`timeline()`和补间一样可以写入一些变量
+
+```javascript
+let tl = gsap.timeline({
+    repeat: -1, 
+    // 在时间轴结束1S后开始播放
+    repeatDelay: 1, 
+    yoyo: true
+});
 ```
