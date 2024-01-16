@@ -1,4 +1,5 @@
 let header = document.getElementById('header');
+
 window.onmousewheel=document.onmousewheel=(e)=>{
     if(e.wheelDelta<0){
         header.style.opacity = 0;
@@ -14,7 +15,5 @@ window.onscroll = function() {
     // 判断滚动条是否在顶部
     if (scrollTop === 0) {
         header.style.opacity = 1;
-    } else {
-        header.style.opacity = 0;
     }
 };
