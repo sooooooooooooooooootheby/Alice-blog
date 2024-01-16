@@ -2,13 +2,13 @@
 abbrlink: ''
 categories:
 - - 前端
-cover: https://pic.imgdb.cn/item/658e8b26c458853aefd3ad91.jpg
+cover: http://pic.yupoo.com/ririsukokoromu/9df3e4f4/4b466647.png
 date: '2023-12-28T17:07:41.057842+08:00'
 tags:
 - GSAP
 - 动画库
 title: GSAP-动画库入门
-updated: '2024-01-14T17:12:27.431+08:00'
+updated: '2024-01-16T15:57:33.231+08:00'
 ---
 # 安装
 
