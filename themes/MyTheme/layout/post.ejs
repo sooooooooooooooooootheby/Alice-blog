@@ -13,7 +13,15 @@
             </div>
         </div>
         <div class="post-Detali-content-content">
-            <span><%- page.content %></span>
+            <div class="post-Detali-content-content-content" id="postContent">
+                <div class="post-Detali-content-content-content-Toc" id="post-Toc">
+                    <span>目录</span>
+                    <p><%- toc(page.content) %></p>
+                </div>
+                <div class="post-Detali-content-content-content-article">
+                    <span><%- page.content %></span>
+                </div>
+            </div>
 
             <br>
             <br>
