@@ -8,7 +8,7 @@ tags:
 - GSAP
 - 动画库
 title: GSAP-动画库入门
-updated: '2024-01-05T18:08:31.668+08:00'
+updated: '2024-01-14T17:12:27.431+08:00'
 ---
 # 安装
 
@@ -233,3 +233,176 @@ stagger: {
     amount: 0.7,
 }
 ```
+
+### TimeLines
+
+标题比较显而易见，是时间线。时间线可以让多个元素的动画调整变得更加的容易。
+
+```javascript
+// 要使用时间线，不能直接使用gsap.to或者gsap.timeline().to，必须要声明一个变量。
+let tl = gsap.timeline();
+
+// 在这之后就和之前所学的一样添加duration(动画播放时长)即可，元素动画将会按照顺序播放
+tl.to(".div1",{
+x: 300,
+duration: 2,
+});
+tl.to(".div2",{
+x: 300,
+duration: 1,
+});
+tl.to(".div3",{
+x: 300,
+duration: 2,
+});
+```
+
+如果你需要给动画添加一点点的延迟，只需要使用变量 `delay`即可
+
+```javascript
+tl.to(".div1",{
+    x: 300,
+    duration: 2,
+});
+tl.to(".div2",{
+    x: 300,
+    duration: 1,
+    // 注意，变量 delay 必须要添加到需要延迟的元素上，例如此处添加到div2，动画的播放将会在div1播放完毕之后停顿1S再继续播放div2的动画
+    delay: 1,
+});
+tl.to(".div3",{
+    x: 300,
+    duration: 2,
+});
+```
+
+##### 位置参数
+
+`gsap.timeline()`还提供了一个位置参数，可以用来调整元素动画在时间轴中播放的位置
+
+```javascript
+tl.to(".div1",{
+    x: 600,
+    duration: 2,
+// 在时间轴开始播放后3S开始播放动画
+},3);
+tl.to(".div2",{
+    x: 600,
+    duration: 1,
+// 在上一个元素动画播放前3S开始播放动画
+},"-=3");
+tl.to(".div3",{
+    x: 600,
+    duration: 2,
+// 在上一个元素动画播放后3S开始播放动画
+},"+=3");
+tl.to(".div4",{
+    x: 600,
+    duration: 2,
+// 在上一个元素动画播放后3S开始播放动画
+},"<");
+```
+
+##### 特殊参数
+
+`timeline()`和补间一样可以写入一些变量
+
+```javascript
+let tl = gsap.timeline({
+    repeat: -1, 
+    // 在时间轴结束1S后开始播放
+    repeatDelay: 1, 
+    yoyo: true
+});
+```
+
+### Control
+
+GSAP官方提供了八个控制函数，用于控制动画的效果
+
+```javascript
+<div class="box"></div>
+<button onclick="tween.play()">开始</button>
+<button onclick="tween.pause()">暂停</button>
+<button onclick="tween.reverse()">倒转</button>
+<button onclick="tween.seek(0.5)">跳转到0.5s的位置</button>
+<button onclick="tween.progress(0.25)">跳转到动画的1/4处</button>
+<button onclick="tween.timeScale(2)">加2倍速</button>
+<button onclick="tween.kill()">杀死动画</button>
+<button onclick="tween.timeScale(2).reverse()">以二倍速倒放（链式控制方法）</button>
+
+<script>
+    let tween = gsap.to(".box", {
+        x: 500,
+        duration: 5,
+        rotation: 360,
+        // ease 用来取消默认的缓和效果，让跳转的效果更加的明显（当然，这只是在学习的过程中需要的）
+        ease: "none",
+        // paused 用来设置动画默认暂停，只有触发了play()函数才会开始播放
+        paused: true,
+    });
+</script>
+```
+
+当然，直接把函数写进标签里虽然方便简洁，但是并不适合后期维护管理，可以尝试一下官方的写法。
+
+```javascript
+<button id="play">play()</button>
+<button id="pause">pause()</button>
+<button id="resume">resume()</button>
+<button id="reverse">reverse()</button>
+<button id="restart">restart()</button>
+
+<script>
+  document.querySelector("#play").onclick = () => tween.play();
+  document.querySelector("#pause").onclick = () => tween.pause();
+  document.querySelector("#resume").onclick = () => tween.resume();
+  document.querySelector("#reverse").onclick = () => tween.reverse();
+  document.querySelector("#restart").onclick = () => tween.restart();
+</script>
+```
+
+### Callbacks
+
+在 `tween`里使用，可以在动画的各个状态调用各种函数
+
+```javascript
+let tween = gsap.to(".box", {
+    x: 500,
+    duration: 5,
+    rotation: 360,
+    ease: "none", 
+    paused: true,
+    onStart:() => console.log("动画开始播放"),
+    onComplete:() => console.log("动画完成播放"),
+    onUpdate:() => console.log("动画状态更新"),
+    onRepeat:() => console.log("动画重复播放"),
+    onReverseComplete:() => console.log("动画反转完成播放"),
+    onStart: tlStart,
+});
+function tlStart() {
+    console.log("动画开始时调用外部函数");
+}
+```
+
+> 可以结合 `Callbacks`和js原生的特性实现一些基于鼠标事件的动画效果
+>
+> ```javascript
+> // 这是官方的例子
+> // 先把 .information 元素向下移动100px，以达到隐藏元素的效果
+> gsap.set(".information", { yPercent: 100 });
+>
+> // 使用GSAP提供的utils.toArray方法，将所有的.container元素转换为数组，方便后续操作
+> gsap.utils.toArray(".container").forEach((container) => {
+>     // 获取 ".information" 元素，并创建一个名为tl的时间轴，默认暂停
+>     let info = container.querySelector(".information"),
+>         tl = gsap.timeline({ paused: true });
+>
+>     // 添加动画到tl中。个把 yPercent 设置为0，让元素复位，以达到元素出现的效果.
+>     tl.to(info, { yPercent: 0 }));
+>
+>     // 使用原生js的方法调用鼠标事件触发动画事件
+>     container.addEventListener("mouseenter", () => tl.timeScale(1).play());
+>     container.addEventListener("mouseleave", () => tl.timeScale(3).reverse());
+> });
+> ```
