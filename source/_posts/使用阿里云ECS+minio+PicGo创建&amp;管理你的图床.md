@@ -7,7 +7,6 @@ tags:
 - 阿里云ECS
 - minio
 - 图床
-- PicGo
 title: 使用阿里云ECS+minio创建你的图床
 updated: '2024-01-18T22:36:19.452+08:00'
 ---
