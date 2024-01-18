@@ -2,7 +2,7 @@
 abbrlink: ""
 categories:
     - - 前端
-cover: http://minio.ririsukokoromu.top:9000/pic/Articleillustration/GSAPcover.png
+cover: https://minio.ririsukokoromu.top:9000/pic/Articleillustration/GSAPcover.png
 date: "2023-12-28T17:07:41.057842+08:00"
 tags:
     - GSAP
@@ -193,7 +193,7 @@ gsap.to(".box", {
 
 [官方的曲线实验场](https://gsap.com/resources/getting-started/Easing)
 
-![easing](http://minio.ririsukokoromu.top:9000/pic/Articleillustration/GSAPease.jpg)
+![easing](https://minio.ririsukokoromu.top:9000/pic/Articleillustration/GSAPease.jpg)
 
 ### Staggers
 
