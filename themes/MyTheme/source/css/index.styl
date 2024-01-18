@@ -29,23 +29,26 @@
 
     font-weight: bold;
 }
-.indexContentHeaderLeft h1 {
+.indexContentHeaderLeftH {
+    margin: 0px 0px;    
+    text-shadow: 10px 10px 10px;
+}
+.indexContentHeaderLeftH:hover::before {
+    content: "";
+}
+.indexContentHeaderLeftH1 {
     color: var(--index-text-h1-color);
     font-size: 52px;
+    font-weight: bold;
+    margin: -10px 0px;
 }
-.indexContentHeaderLeft h3 {
+.indexContentHeaderLeftH3 {
     color: var(--index-text-h3-color);
     font-size: 42px;
 }
-.indexContentHeaderLeft h5 {
+.indexContentHeaderLeftH5 {
     color: var(--index-text-h5-color);
     font-size: 28px;
-}
-.indexContentHeaderLeft h3:hover::before {
-    content: "";
-}
-.indexContentHeaderLeft h5:hover::before {
-    content: "";
 }
 .indexContentHeaderLeft h5 img {
     position: absolute;
