@@ -120,6 +120,10 @@ vim start.sh
 ### 在.sh文件中填入一下内容
 
 nohup /root/minio/minio server  /root/minio/data --console-address ":9001" --certs-dir /root/minio/certs/ > /root/minio/minio.log 2>&1 &
+
+### 保存并退出
+
+sh start.sh
 ```
 
 这样就完事大吉了，可以享用你的图床（其实可以当云盘用的）了。
