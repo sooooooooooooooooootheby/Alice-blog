@@ -7,7 +7,7 @@ tags:
 - 阿里云ECS
 - minio
 title: 使用阿里云ECS和minio创建你的图床
-updated: '2024-01-19T00:11:11.816+08:00'
+updated: '2024-01-19T10:42:14.361+08:00'
 ---
 > “大丈夫生居天地间，岂能郁郁久居人下！”
 >
@@ -25,8 +25,6 @@ updated: '2024-01-19T00:11:11.816+08:00'
 关于云服务器的系统，我这里用的是ubuntu 22.04，不过用啥系统都不重要，
 
 ![minio2](https://minio.ririsukokoromu.top:9000/pic/Articleillustration/minio2.png)
-
-
 
 ### 开始部署
 
@@ -104,4 +102,28 @@ export MINIO_ROOT_PASSWORD=yourpassword
 
 这个时候我们就需要用到证书网站了，申请一个TLS证书，这里再贴一遍网址https://letsencrypt.osfipin.com/。证书申请很简单，一路都有文字引导，所以这里就不教了。
 
-证书成功申请之后下载下来，我们只需要 `certificate.crt`和 `private.pem`两个文件，
+证书成功申请之后下载下来，我们只需要 `certificate.crt`和 `private.pem`两个文件，将证书文件 `certificate.crt`改名为 `public.crt`，私钥文件 `private.pem`改后缀为 `private.key`在minio的工作目录下新建一个文件夹 `certs`把命名后的文件放进去
+
+![minio8](https://minio.ririsukokoromu.top:9000/pic/Articleillustration/minio8.png)
+
+在启动项里添加上 `--certs -dir /root/minio/certs/`就可以成功开启https协议了。
+
+```shell
+./minio server  minio/data --console-address ":9001" --certs-dir /root/minio/certs/ > /root/minio/minio.log 2>&1 &
+```
+
+最后一步，写一个脚本，让程序在后台自动运行就好了，这样即使关掉终端程序也不会停止。
+
+```shell
+vim start.sh
+
+### 在.sh文件中填入一下内容
+
+nohup /root/minio/minio server  /root/minio/data --console-address ":9001" --certs-dir /root/minio/certs/ > /root/minio/minio.log 2>&1 &
+
+### 保存并退出
+
+sh start.sh
+```
+
+这样就完事大吉了，可以享用你的图床（其实可以当云盘用的）了。
