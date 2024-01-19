@@ -104,7 +104,7 @@ export MINIO_ROOT_PASSWORD=yourpassword
 
 证书成功申请之后下载下来，我们只需要 `certificate.crt`和 `private.pem`两个文件，将证书文件 `certificate.crt`改名为 `public.crt`，私钥文件 `private.pem`改后缀为 `private.key`在minio的工作目录下新建一个文件夹 `certs`把命名后的文件放进去
 
-![minio8]
+![minio8](https://minio.ririsukokoromu.top:9000/pic/Articleillustration/minio8.png)
 
 在启动项里添加上 `--certs -dir /root/minio/certs/`就可以成功开启https协议了。
 
