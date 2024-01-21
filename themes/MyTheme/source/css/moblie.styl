@@ -89,12 +89,15 @@
     .indexContent {
         width: 100vw;    
     }
+    .indexGuider {
+        display: none;
+    }
     .indexContentHeader {
-        margin-top: 100px;
         max-width: 90%;
         height: auto;
     }
     .indexContentHeaderUp {
+        height: 100vh;
         display: flex;
         flex-direction: column;   
         justify-content: center; 
@@ -129,7 +132,7 @@
     .indexContentHeaderRight {
         width: 150px;
         height: 150px;
-        margin-right: 0px;
+        margin: 0px 0px 30px 0px;
     }
     .indexContentHeaderRight img{
         width: 150px;
@@ -188,15 +191,16 @@
     footer {
         height: 200px;
         flex-direction: column;
+        padding: 10px 0px;
     }
     footer img {
         width: 60px;
         height: 60px;
-        margin: 10px 0;
     }
-
-    // 鼠标
-    .mouse {
-        display: none;    
+    .footerLeft {
+        align-items: center;   
+    }
+    .footerRight {
+        align-items: center;    
     }
 }
