@@ -64,13 +64,13 @@
                             <!-- 文章信息 -->
                             <div class="post-info iconfont">
                                 <span>
-                                    &#xef82;<%- date(post.date, "YYYY-MM-DD" ) %>
+                                    ⏱️<%- date(post.date, "YYYY-MM-DD" ) %>
                                 </span>
                                 <span>
-                                    &#xee48;<% post.categories.forEach(function(category) { %><a href="<%- url_for('category', { name: category.name }) %>"><%- category.name %></a>, <% }); %>
+                                    📕<% post.categories.forEach(function(category) { %><a href="<%- url_for('category', { name: category.name }) %>"><%- category.name %></a>, <% }); %>
                                 </span>
                                 <span>
-                                    &#xee95;<% post.tags.forEach(function(tag) { %><a href="<%- url_for('tag', { name: tag.name }) %>"><%- tag.name %></a>, <% }); %>
+                                    🏷️<% post.tags.forEach(function(tag) { %><a href="<%- url_for('tag', { name: tag.name }) %>"><%- tag.name %></a>, <% }); %>
                                 </span>
                             </div>
                         </div>
