@@ -193,7 +193,7 @@ gsap.to(".box", {
 
 [官方的曲线实验场](https://gsap.com/resources/getting-started/Easing)
 
-![easing](https://minio.ririsukokoromu.top:9000/pic/Articleillustration/GSAPease.jpg)
+![easing](https://pic.imgdb.cn/item/65ace7f4871b83018a2794e0.png)
 
 ### Staggers
 
