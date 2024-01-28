@@ -17,6 +17,12 @@
             <ul>
                 <li>
                     <div>
+                        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-daima3"></use></svg><p>技术</p>
+                    </div>
+                    <p>这里都是我会的技术</p>
+                </li>
+                <li>
+                    <div>
                         <svg class="icon" aria-hidden="true"><use xlink:href="#icon-HTML"></use></svg><p>HTML5</p>
                     </div>
                     <p>前端三件套之--HTML！</p>
@@ -37,59 +43,27 @@
                     <div>
                         <svg class="icon" aria-hidden="true"><use xlink:href="#icon-Vue"></use></svg><p>Vue</p>
                     </div>
-                    <P>主流的前端框架！</P>
+                    <P>易学易用，性能出色，适用场景丰富的 Web 前端框架。</P>
                 </li>
                 <li>
                     <div>
                         <svg class="icon" aria-hidden="true"><use xlink:href="#icon-GSAP"></use></svg><p>GSAP</p>
                     </div>
-                    <P>一个强大的 JavaScript 动画库！</P>
+                    <P>一个为专业人士构建的非常强大的JavaScript动画库</P>
+                </li>
+                <li>
+                    <div>
+                        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-stylus"></use></svg><p>Stylus</p>
+                    </div>
+                    <P>一个富于表现力、动态的、健壮的CSS预处理器。</P>
+                </li>
+                <li>
+                    <div>
+                        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-sass"></use></svg><p>SASS</p>
+                    </div>
+                    <P>世界上最成熟、最稳定、最强大的专业级CSS扩展语言！</P>
                 </li>
             </ul>
-        </div>
-    </div>
-    <div class="indexContentArticle">
-        <div class="indexContentArticleBox">
-            <% page.posts.each(function (post) { %>
-                    <section class="posts">
-                        <div class="postLeft">
-                            <!-- 文章标题 -->
-                            <div class="post-title">
-                                <a href="<%- url_for(post.path) %>"><%= post.title %></a>
-                            </div>
-                            <!-- 文章大概内容 -->
-                            <div class="post-content">
-                                <a href="<%- url_for(post.path) %>"><%- post.excerpt %></a>
-                            </div>
-                            <!-- 文章信息 -->
-                            <div class="post-info iconfont">
-                                <span>
-                                    ⏱️<%- date(post.date, "YYYY-MM-DD" ) %>
-                                </span>
-                                <span>
-                                    📕<% post.categories.forEach(function(category) { %><a href="<%- url_for('category', { name: category.name }) %>"><%- category.name %></a>, <% }); %>
-                                </span>
-                                <span>
-                                    🏷️<% post.tags.forEach(function(tag) { %><a href="<%- url_for('tag', { name: tag.name }) %>"><%- tag.name %></a>, <% }); %>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="postRight">
-                            <div>
-                                <% if (post.cover) { %>
-                                    <img data-src="<%= post.cover %>" alt="Article Cover">
-                                    <% } %>
-                            </div>
-                        </div>
-                    </section>
-                <% }) %>
-        </div>
-        <div class="paginator">
-            <% if (page.total> 1){ %>
-                <nav class="page-nav">
-                    <%- paginator({ prev_text: "<" , next_text: ">" }) %>
-                </nav>
-                <% } %>
         </div>
     </div>
 </div>

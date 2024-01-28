@@ -7,3 +7,6 @@ valine:
   pageSize: 10 # 一页显示的评论数
   placeholder: 'just go go' # 评论框占位文本
   background: /medias/comment_bg.png # 评论框背景
+menu:
+  Home: /
+  文章列表: /postList

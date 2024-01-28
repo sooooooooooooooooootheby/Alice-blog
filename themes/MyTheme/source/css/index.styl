@@ -7,8 +7,8 @@
 }
 // 主页头部
 .indexContentHeader {
-    max-width: 60%;
-    height: calc(100vh - 64px);
+    max-width: 1152px;
+    min-height: calc(100vh - 64px);
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -20,6 +20,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    margin-top: 100px;
 }
 // 文字
 .indexContentHeaderLeft {
@@ -38,13 +39,12 @@
 }
 .indexContentHeaderLeftH1 {
     color: var(--index-text-h1-color);
-    font-size: 52px;
-    font-weight: bold;
+    font-size: 56px;
     margin: -10px 0px;
 }
 .indexContentHeaderLeftH3 {
     color: var(--index-text-h3-color);
-    font-size: 42px;
+    font-size: 56px;
 }
 .indexContentHeaderLeftH5 {
     color: var(--index-text-h5-color);
@@ -61,7 +61,7 @@
 .indexContentHeaderRight{
     width: 200px;
     height: 200px;
-    margin-right: 100px;
+    margin-right: 200px;
     position relative;
 }
 .indexContentHeaderRight img{
@@ -104,15 +104,16 @@
 }
 .indexContentHeaderDown ul li {
     list-style: none;
-    padding: 15px 0px 15px 15px;
-    margin: 10px;
+    padding: 20px;
+    margin: 8px;
+    opacity: 1;   
 
-    background-color: rgba(22, 160, 132, 0.7);
+    background-color: rgba(216, 216, 216, 0.3);
     border-radius: 10px;
     backdrop-filter: blur(10px);
 }
 .indexContentHeaderDown ul li>p {
-    color: aliceblue;
+    color: #666;
     font-size: 15px; 
     margin: 10px 0px;   
 }
@@ -120,139 +121,15 @@
     display: flex;    
 }
 .indexContentHeaderDown ul li div svg {
-    font-size: 30px; 
+    font-size: 24px; 
     padding: 10px;
-    background-color: aliceblue;    
-    border-radius: 10px;
-}
-.indexContentHeaderDown ul li div img {
-    width: 30px;
-    height: 30px;
-    font-size: 30px; 
-    padding: 10px;
-    background-color: aliceblue;    
+    background-color: rgba(216, 216, 216, 0.6);    
     border-radius: 10px;
 }
 .indexContentHeaderDown ul li div p {
-    color: aliceblue;
-    line-height: 50px;
+    color: #444;
+    line-height: 45px;
     margin-left: 10px;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
-}
-
-
-// 文章列表
-.indexContentArticle {
-    width: 100%;
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column
-    justify-content: center;
-    align-items: center;
-}
-.indexContentArticleBox {
-    width: 50rem;
-    background-color: var(--articleBox-bg-color);
-    box-shadow: 0px 0px 10px 0px var(--box-shadow-color);
-    border-radius: 20px;
-    opacity: 0.6;
-    margin-top: 100px;
-}
-.indexContentArticle a {
-    width: 100%
-
-    text-decoration: none;
-    color var(--articleBox-text-color);
-}
-.posts {
-    width: 100%;
-    height: 200px;
-    margin: 15px 0px
-    display: flex;
-    border-bottom: 2px dashed #666;
-    border-top: 2px dashed #666;
-}
-.postLeft {
-    width: 70%;
-    margin: 20px;
-    overflow: hidden;
-}
-.post-title {
-    width: 100%;
-    height: 30%;
-    padding-left: 5px;
-    border-left: 3px solid var(--articleBox-text-color);
-    
-    white-space: nowrap; /* 防止文本换行 */
-
-    color: var(--articleBox-text-color);
-    font-size: 40px;
-    font-weight: bold
-}
-.post-content {
-    width: 100%;
-    height: 40%;
-    margin-top: 5px;
-    padding-left: 5px;
-    border-left: 3px solid var(--articleBox-text-color);
-    overflow: scroll;
-
-    color: var(--articleBox-text-color);
-    font-size: 15px;
-}
-.post-info {
-    width: 100%;
-    height: 30%;
-    display: flex;
-    align-items: center
-
-    white-space: nowrap; /* 防止文本换行 */
-
-    color: var(--articleBox-text-color);
-}
-.post-info span {
-    margin-right: 10px;
-}
-
-
-.postRight {
-    width: 30%;
-    margin: 20px;
-}
-.postRight div {
-    width: 100%
-    height: 100%
-    background-color: #444;
-    border-radius: 20px
-    overflow: hidden;
-}
-.postRight div img {
-    width: 100%;
-    height: 100%
-    object-fit: cover;
-}
-
-// 分页
-.paginator {
-    width: 100%;
-    height: 60px;
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;  
-}
-.page-nav span {
-    padding: 8px 10px;
-    margin: 0px 10px;
-    border-radius: 8px
-    background-color: #16A085;
-    color: aliceblue;
-}
-.page-nav a {
-    padding: 8px 10px;
-    margin: 0px 10px;
-    border-radius: 8px
-    background-color: aliceblue;
-    color: #16A085;
 }

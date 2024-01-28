@@ -1,0 +1,53 @@
+<div class="indexContentArticle">
+    <div class="indexContentArticleBox">
+        <% if (site.posts && site.posts.length) { %>
+            <% site.posts.each(function (post) { %>
+                <section class="posts">
+                    <div class="postLeft">
+                        <!-- 文章标题 -->
+                        <div class="post-title">
+                            <a href="<%- url_for(post.path) %>">
+                                <%= post.title %>
+                            </a>
+                        </div>
+                        <!-- 文章大概内容 -->
+                        <div class="post-content">
+                            <a href="<%- url_for(post.path) %>"><%- post.excerpt %></a>
+                        </div>
+                        <!-- 文章信息 -->
+                        <div class="post-info iconfont">
+                            <span>
+                                ⏱️<%- date(post.date, "YYYY-MM-DD" ) %>
+                            </span>
+                            <span>
+                                📕<% post.categories.forEach(function(category) { %><a
+                                        href="<%- url_for('category', { name: category.name }) %>"><%- category.name
+                                            %></a>, <% }); %>
+                            </span>
+                            <span>
+                                🏷️<% post.tags.forEach(function(tag) { %><a
+                                        href="<%- url_for('tag', { name: tag.name }) %>"><%- tag.name %></a>, <% }); %>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="postRight">
+                        <div>
+                            <% if (post.cover) { %>
+                                <img data-src="<%= post.cover %>" alt="Article Cover">
+                                <% } %>
+                        </div>
+                    </div>
+                </section>
+            <% }) %>
+        <% } %>
+    </div>
+    <div class="paginator">
+        <% if (site.total_posts > 1){ %>
+            <nav class="page-nav">
+                <%- paginator({ prev_text: "<" , next_text: ">" }) %>
+            </nav>
+        <% } %>
+    </div>
+</div>
+<!-- 引入动画 -->
+<%- js('js/animate/postList') %>
