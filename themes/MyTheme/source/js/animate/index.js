@@ -21,6 +21,6 @@ if (window.outerWidth < 950) {
         scrub: 1,
         stagger: 0.3, // 使用stagger参数来逐个触发动画
         animation: timeline,
-        markers: true,
+        // markers: true,
     });
 }
