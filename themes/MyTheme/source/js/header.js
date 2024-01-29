@@ -2,9 +2,9 @@ let header = document.getElementById('header');
 
 window.onmousewheel=document.onmousewheel=(e)=>{
     if(e.wheelDelta<0){
-        header.style.opacity = 0;
+        header.style.borderBottom = '1px solid var(--footerborder)'
     }else if(e.wheelDelta>0){
-        header.style.opacity = 1;
+        header.style.borderBottom = 'none';
     } 
 }
 
@@ -14,6 +14,6 @@ window.onscroll = function() {
 
     // 判断滚动条是否在顶部
     if (scrollTop === 0) {
-        header.style.opacity = 1;
+        header.style.borderBottom = 'none';
     }
 };
