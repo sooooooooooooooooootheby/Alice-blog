@@ -1,17 +1,15 @@
 <header id="header">
-  <div class="headerPC">
-    <div class="headerPCLeft">
-      <div class="headerPCLeftLogo"><img data-src="http://pic.yupoo.com/ririsukokoromu/c9501caf/524e360a.png"
-          alt="Web-logo"></div>
-      <div class="headerPCLeftTitle"><a href="/">
-          <%= config.title %>
-        </a></div>
-    </div>
-    <label class="headerRightSwitch iconfont" for="headerRightSwitch">&#xef5e;</label>
-    <input type="checkbox" name="headerRightSwitch" id="headerRightSwitch" class="headerRightSwitchInput">
-    <div class="headerPCRight">
-      <!-- <div class="headerPCRightBG"></div> -->
-      <div class="headerPCRightLink">
+  <div class="headerLogo">
+    <img src="http://pic.yupoo.com/ririsukokoromu/c9501caf/524e360a.png" alt="Web-logo">
+    <a href="/"><%= config.title %></a>
+  </div>
+  <!-- 菜单 -->
+  <div class="headerMenuSwitch">
+    <label class="iconfont" for="headerSwitch">&#xef5e;</label>
+    <input type="checkbox" name="headerSwitch" id="headerSwitch">  
+    <div class="headerModule" id="headerModule">
+      <!-- 菜单 -->
+      <div class="headerModuleMenu">
         <ul>
           <% for (name in theme.menu) { %>
             <li class="menu-item">
@@ -22,18 +20,20 @@
             <% } %>
         </ul>
       </div>
-      <div class="headerPCRightInterval"></div>
-      <div class="headerPCRightLight-dark">
+      <div class="headerInterval"></div>
+      <!-- 明暗切换开关 -->
+      <div class="headerLight-dark">
         <p>Day alternates with night!</p>
-        <div class="toggle-switch">
-          <label class="switch-label">
-            <input type="checkbox" class="checkbox" id="themeCheckbox">
+        <div>
+          <label>
+            <input type="checkbox" id="themeCheckbox">
             <span class="slider"></span>
           </label>
         </div>
       </div>
-      <div class="headerPCRightInterval"></div>
-      <div class="headerPCRightSocialize">
+      <div class="headerInterval"></div>
+      <!-- 社交平台 -->
+      <div class="headerSocialize">
         <ul>
           <li><a href="https://github.com/Ririsu-Kokoromu" class="iconfont">&#xeea8;</a></li>
           <li><a href="https://discord.gg/eRGYZw6Q" class="iconfont">&#xeeab;</a></li>
@@ -42,6 +42,7 @@
       </div>
     </div>
   </div>
+  
   <!-- 下滑收起导航栏 -->
   <%- js('js/header') %>
     <!-- 控制明暗主题 -->
@@ -54,7 +55,6 @@
           setTheme('light');
         }
       });
-
       const setTheme = theme => document.documentElement.className = theme;
     </script>
 </header>

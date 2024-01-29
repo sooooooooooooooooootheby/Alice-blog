@@ -1,158 +1,131 @@
-header {
-    position: fixed;
-    height: 64px;
-    z-index: 999;
-    opacity: 1;
-    transition: all 0.5s
-}
-.headerPC {
-    width: 100vw;
-    height: 64px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    z-index: 1;
-    background-color: var(--header-bg-color);
-    box-shadow: 0px 0px 10px 0px var(--box-shadow-color);
-}
-// 左边
-.headerPCLeft {
-    display: flex;
-    align-items: center;  
-    font-weight: blog;  
-}
-.headerPCLeftLogo img {
-    width: 32px;
-    height: 32px;
-}
-.headerPCLeftTitle a {
-    font-weight: bold;
-    text-decoration: none;
-    color var(--header-text-color);
-}
-.headerRightSwitchInput {
-  display: none;  
-}
+// 移动端隐藏部分
+.headerRightSwitch
+  display none
+header
+  width 100vw
+  height 64px
+  position fixed
+  z-index 2
+  display flex
+  justify-content space-between
+  align-items center
+  background-color var(--guiderBGColor)
+  box-shadow 0px 0px 10px 0px var(--guiderShadow)
+  opacity 1
+  transition all 0.5s
+// 左边logo
+.headerLogo
+  margin-left 64px
+  display flex
+  align-items center
+  font-weight blod
 
-// 右边
-.headerPCRight {
-    display: flex;
-    align-items: center;
-}
-.headerPCRightBG {
-  display: none;
-}
+  img
+    width 32px
+    height 32px
+  a
+    font-weight bold
+    text-decoration none
+    color var(--guiderLogo)
+// 右边组件
+.headerModule
+  margin-right 64px
+  display flex
+  align-items center
+// 分割线
+.headerInterval
+  width 1px
+  height 15px
+  background-color var(--guiderInterval)
+// 菜单
+.headerModuleMenu
+  ul
+    display flex
 
-.headerPCRightLink {
-  margin: 0px 10px;  
-}
-.headerPCRightLink ul{
-  display: flex;  
-}
-.headerPCRightLink ul li{
-  list-style: none;  
-  margin: 0 5px;
-  font-size: 14px;
-}
-.headerPCRightLink ul li a{
-  text-decoration: none;
-  color: #333;
-}
-.headerPCRightLink ul li a:hover{
-  text-decoration: none;
-  color: rgb(27, 129, 112);
-}
-// 开关
-.headerPCRightLight-dark {
-  margin: 0px 10px;  
-}
-.toggle-switch {
-  position: relative;
-  width: 40px;
-  height: 20px;
-  --light: #d8dbe0;
-  --dark: #28292c;
-  --link: rgb(27, 129, 112);
-  --link-hover: rgb(24, 94, 82);
-}
+    li
+      list-style none
+      margin 0 5px
+      font-size 14px
 
-.switch-label {
-  position: absolute;
-  width: 33px;
-  height: 14px;
-  background-color: var(--dark);
-  border-radius: 25px;
-  cursor: pointer;
-  border: 3px solid var(--dark);
-}
-.checkbox {
-  position: absolute;
-  display: none;
-}
-.slider {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 25px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-.checkbox:checked ~ .slider {
-  background-color: var(--light);
-}
-.slider::before {
-  content: "";
-  position: absolute;
-  top: 0.5px;
-  left: 1px;
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  -webkit-box-shadow: inset 3px -4px 0px 0px var(--light);
-  box-shadow: inset 3px -4px 0px 0px var(--light);
-  background-color: var(--dark);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-.checkbox:checked ~ .slider::before {
-  -webkit-transform: translateX(18px);
-  -ms-transform: translateX(18px);
-  transform: translateX(18px);
-  background-color: var(--dark);
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
+      a
+        color var(--guiderTextIcon)
+        text-decoration none
+        transition all 0.2s
+      a:hover
+        color var(--guiderTextIconHover)
+      a:active
+        color var(--guiderTextIconClick)
+// 明暗切换开关
+.headerLight-dark
+  margin 0px 10px
 
-// 分割
-.headerPCRightInterval {
-    width: 1px;
-    height: 15px;
-    background-color: var(--header-text-color);
-}
+  p
+    display none
+  div
+    position relative
+    width 40px
+    height 20px
+    --light #d8dbe0
+    --dark #28292c
+    --link rgb(27, 129, 112)
+    --link-hover rgb(24, 94, 82)
 
-// 社交链接
-.headerPCRightSocialize ul{
-    display: flex;
-}
-.headerPCRightSocialize ul li {
-    margin: 0px 5px
-    list-style: none;
-}
-.headerPCRightSocialize ul li a {
-    font-size: 24px;
-    text-decoration: none;
-    color: var(--header-text-color);
-    transition: all 0.2s;
-}
-.headerPCRightSocialize ul li a:hover {
-    color #16A085;
-}
+    label
+      position absolute
+      width 33px
+      height 14px
+      background-color var(--dark)
+      border-radius 25px
+      cursor pointer
+      border 3px solid var(--dark)
 
+      input
+        position absolute
+        display none
+      input:checked ~ .slider
+        background-color var(--light)
+      input:checked ~ .slider::before
+        -webkit-transform translateX(18px)
+        -ms-transform translateX(18px)
+        transform translateX(18px)
+        background-color var(--dark)
+        -webkit-box-shadow none
+        box-shadow none
+      span
+        width 100%
+        height 100%
+        position absolute
+        border-radius 25px
+        -webkit-transition 0.3s
+        transition 0.3s
+      span::before
+        content ''
+        position absolute
+        top 0.5px
+        left 1px
+        width 13px
+        height 13px
+        border-radius 50%
+        -webkit-box-shadow inset 3px -4px 0px 0px var(--light)
+        box-shadow inset 3px -4px 0px 0px var(--light)
+        background-color var(--dark)
+        -webkit-transition 0.3s
+        transition 0.3s
+// 社交平台
+.headerSocialize
+  ul
+    display flex
 
-// 隐藏移动端
-.headerRightSwitch {
-  display: none;  
-}
-.headerPCRightLight-dark p {
-  display: none;
-}
+    li
+      margin 0px 5px
+      list-style none
+
+      a
+        font-size 24px
+        text-decoration none
+        color var(--guiderTextIcon)
+        transition all 0.2s
+      a:hover
+        color var(--guiderTextIconHover)
+      a:active
+        color var(--guiderTextIconClick)

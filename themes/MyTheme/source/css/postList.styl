@@ -1,112 +1,93 @@
 // 文章列表
-.indexContentArticle {
-    width: 100%;
-    min-height: calc(100vh);
-    display: flex;
-    flex-direction: column
-    justify-content: center;
-    align-items: center;
-}
-.indexContentArticleBox {
-    width: 50rem;
-    margin-top: 200px;
-}
-.indexContentArticle a {
-    width: 100%
+.indexContentArticle
+    width 100%
+    min-height 100vh
+    display flex
+    flex-direction column
+    align-items center
 
-    text-decoration: none;
-    color var(--articleBox-text-color);
-}
-.posts {
-    width: 100%;
-    height: 200px;
-    background-color: #fff;
-    border-radius: 20px;
-    box-shadow: 0px 0px 10px 0px #333;
-    opacity: 0;
-    margin: 15px 0px;
-    display: flex;
-}
-.postLeft {
-    width: 70%;
-    margin: 20px;
-    overflow: hidden;
-}
-.post-title {
-    width: 100%;
-    height: 30%;
-    padding-left: 5px;
-    border-left: 3px solid var(--articleBox-text-color);
-    
-    white-space: nowrap; /* 防止文本换行 */
+    a
+        color inherit
+        text-decoration none
+.indexContentArticleBox
+    width 50rem
+    margin-top: 200px
+.posts
+    width 100%
+    height 200px
+    margin 15px 0px
+    display flex
+    background-color var(--articleListBGColor)
+    border-radius 20px
+    box-shadow 0px 0px 10px 0px var(--articleListShadow)
+    opacity 0
+.postLeft
+    width 70%
+    margin 20px
+    overflow hidden
+// 标题
+.post-title
+    width 100%
+    height 30%
+    padding-left 5px
+    color var(--articleListH)
+    font-size 40px
+    font-weight bold
+    white-space nowrap
+// 简略
+.post-content
+    width 100%
+    height 40%
+    margin-top 5px
+    padding-left 5px
+    overflow scroll
+    border-left 3px solid var(--articleListText)
+    color var(--articleListText)
+    font-size 15px
+// 标签信息
+.post-info
+    width 100%
+    height 30%
+    display flex
+    align-items center
+    color var(--articleListInfo)
+    white-space nowrap
 
-    color: var(--articleBox-text-color);
-    font-size: 40px;
-    font-weight: bold
-}
-.post-content {
-    width: 100%;
-    height: 40%;
-    margin-top: 5px;
-    padding-left: 5px;
-    border-left: 3px solid var(--articleBox-text-color);
-    overflow: scroll;
+    span
+        margin-right 10px
+// 封面
+.postRight
+    width 30%
+    margin 20px
 
-    color: var(--articleBox-text-color);
-    font-size: 15px;
-}
-.post-info {
-    width: 100%;
-    height: 30%;
-    display: flex;
-    align-items: center
+    div
+        width 100%
+        height 100%
+        overflow hidden
+        border-radius 20px
 
-    white-space: nowrap; /* 防止文本换行 */
-
-    color: var(--articleBox-text-color);
-}
-.post-info span {
-    margin-right: 10px;
-}
-
-
-.postRight {
-    width: 30%;
-    margin: 20px;
-}
-.postRight div {
-    width: 100%
-    height: 100%
-    background-color: #444;
-    border-radius: 20px
-    overflow: hidden;
-}
-.postRight div img {
-    width: 100%;
-    height: 100%
-    object-fit: cover;
-}
-
+        img
+            width 100%
+            height 100%
+            object-fit cover
 // 分页
-.paginator {
-    width: 100%;
-    height: 60px;
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;  
-}
-.page-nav span {
-    padding: 8px 10px;
-    margin: 0px 10px;
-    border-radius: 8px
-    background-color: #16A085;
-    color: aliceblue;
-}
-.page-nav a {
-    padding: 8px 10px;
-    margin: 0px 10px;
-    border-radius: 8px
-    background-color: aliceblue;
-    color: #16A085;
-}
+.paginator
+    width 100%
+    height 60px
+    margin-bottom 30px
+    display flex
+    justify-content center
+    align-items center
+
+    span
+        margin 0px 10px
+        padding 8px 10px
+        background-color #16A085
+        border-radius 8px
+        color aliceblue
+    a
+        margin 0px 10px
+        padding 8px 10px
+        background-color aliceblue
+        border-radius 8px
+        color #16A085

@@ -1,57 +1,50 @@
-footer {
-    width: 100vw;
-    height: 160px;
-    background-color: var(--header-bg-color);
+footer
+    width 100vw
+    height 160px
+    display flex
+    justify-content space-around
+    align-items center
+    background-color var(--footerBGColor)
+    box-shadow 0px 0px 10px 0px var(--footerShadow)
+.footerLeft
+    display flex
+    flex-direction column
 
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    span
+        color var(--footerText)
+    a
+        color var(--footerRegister)
+.footerRight
+    display flex
+    flex-direction column
+    justify-content center
+    align-items flex-end
 
-    box-shadow: 0px 0px 10px 0px var(--box-shadow-color);
-}
-.footerLeft {
-    display: flex;
-    flex-direction: column;    
-}
-.footerLeft span {
-    color: #666;
-}
-.moeICP {
-    color: #f1acbe;
-}
+    ul
+        margin-top 10px
+        color var(--footerTextIcon)
+        display flex
 
-.footerRight {
-    display: flex;
-    flex-direction: column; 
-    justify-content: center;
-    align-items: flex-end;
-}
-.footerRight ul {
-    margin-top: 10px;
-    color: #666;
-    display: flex;
-}
-.footerRight ul p {
-    font-weight: bold;  
-    line-height: 32px;  
-}
-.footerRight ul li {
-    margin: 0px 5px;
-    list-style: none;
-    line-height: 32px;  
-}
-.footerRight ul li a {
-    text-decoration: none;
-    color: #666;
-    font-weight: bold;
-    transition: 0.5s;
-}
-.footerRight ul li a:hover {
-    color: #16A085;
-}
-.footerRight ul li a img {
-    width: 32px;    
-    height: 32px;
-    background-color: #555;
-    border-radius: 32px;
-}
+        p
+            font-weight bold
+            line-height 32px
+        li
+            margin 0px 5px
+            list-style none
+            line-height 32px
+
+            a
+                text-decoration none
+                color var(--footerTextIcon)
+                font-weight bold
+                transition 0.5s
+
+                img
+                    width 32px
+                    height 32px
+                    background-color #555
+                    border-radius 32px
+            a:hover
+                color var(--footerTextIconHover)
+            a:active
+                color var(--footerTextIconClick)

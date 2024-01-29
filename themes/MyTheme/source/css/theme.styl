@@ -1,45 +1,205 @@
-:root,
-:root.light {
+// 所有的样式按照以下的格式书写
+// content
+// width
+// height
+
+// margin
+// padding
+// position
+// top
+// right
+// bottom
+// left
+// z-index
+
+// display
+// flex-direction
+// justify-content
+// align-items
+// overflow
+
+// background
+// border-radius
+// box-shadow
+
+// color
+// font
+
+// 杂项
+
+// transition
+
+:root
+:root.light
+    // 主题背景色
+    --themeBGColor aliceblue
+    // 选中文本背景色
+    --selectionBGColor #FFE6CC
+    //选中文本
+    --selectionText #222
+
     // 导航栏
-    --header-bg-color: #fff;
-    --header-text-color: #333;
-    --box-shadow-color: #949494;
-    --box-blur-color: rgba(240, 248, 255,0.7);
-    --box-text-color: #555;
-    //body背景
-    --body-bg-color: #F0F8FF;
-    //首页头部文字
-    --index-text-h1-color: #16A085;
-    --index-text-h3-color: #333;
-    --index-text-h5-color: #555;
-    //首页文章列表
-    --articleBox-bg-color: #fff;
-    --articleBox-text-color: #333;
-    --articleBox-textdata-color: #555;
-    //文章页
-    --post-title-text-color: #fff;
-    --post-content-text-color: #1C304A;
-    --post-content-bg-color: #fff;
-}
-:root.dark {
+    // 背景色
+    --guiderBGColor #FFFFFF
+    // 阴影
+    --guiderShadow #949494
+    // logo
+    --guiderLogo #3c3c43
+    // 可互动元素
+    --guiderTextIcon #444444
+    // 触碰
+    --guiderTextIconHover #C5A2A0
+    // 按下
+    --guiderTextIconClick #FFE6CC
+    //分割线
+    --guiderInterval #444444
+    // 菜单背景
+    --guiderMenuBGColor #C5A2A080
+    // 明暗主题开关
+    // 文字
+    --guiderMenuThemeSwitchText aliceblue
+    // 背景色
+    --guiderMenuThemeSwitchBGColor #F7B6BAB0
+
+    // 主页
+    // 顶部
+    // H1
+    --homeHeaderH1 #C5A2A0
+    // H3
+    --homeHeaderH3 #3c3C43
+    // H5
+    --homeHeaderH5 #3C3C43C7
+    // 头像
+    --homeHeaderImg #FFE6CC
+    
+    // 技术
+    // 背景色
+    --skillBGColor #D8D8D84D
+    // 图标背景色
+    --skillIconColor #D8D8D899
+    // 标题
+    --skillH #444444
+    // 介绍
+    --skillText #666666
+
+    // 文章列表
+    // 背景色
+    --articleListBGColor #FFFFFF
+    // 阴影
+    --articleListShadow #333333
+    // 标题文字
+    --articleListH #222222
+    // 简略文本
+    --articleListText #666666
+    // 标签信息
+    --articleListInfo #444444
+
+    // 文章
+    // 阴影
+    --articleShadow #333333
+    // 封面文字
+    --articleCoverText #FFFFFF
+    // 正文
+    --articleBGColor aliceblue
+    --articleText #444444
+    --articleA #C5A2A0
+    // 评论区
+    --articleCommentBGColor #F9F8F4
+    --articleCommentText #444444
+    
+
+    // 页脚
+    // 背景色
+    --footerBGColor #FFFFFF
+    // 阴影
+    --footerShadow #949494
+    // 文本
+    --footerText #666666
+    // 可互动元素
+    --footerTextIcon #444444
+    // 触碰
+    --footerTextIconHover #C5A2A0
+    // 按下
+    --footerTextIconClick #FFE6CC
+    // 备案
+    --footerRegister #F7B6BA
+
+:root.dark 
+    // 主题背景色
+    --themeBGColor #211B1B
+    // 选中文本背景色
+    --selectionBGColor #FFE6CC
+    //选中文本
+    --selectionText #222
+
     // 导航栏
-    --header-bg-color: #333;
-    --header-text-color: #fff;
-    --box-shadow-color: #000;
-    --box-blur-color: rgba(68, 68, 68, 0.7);
-    --box-text-color: #fff;
-    //body背景
-    --body-bg-color: #444;
-    //首页头部文字
-    --index-text-h1-color: #3adfbe;
-    --index-text-h3-color: #fff;
-    --index-text-h5-color: #555;
-    //首页文章列表
-    --articleBox-bg-color: #444;
-    --articleBox-text-color: #fff;
-    --articleBox-textdata-color: #fff;
-    //文章页
-    --post-title-text-color: #fff;
-    --post-content-text-color: #fff;
-    --post-content-bg-color: #333;
-}
+    // 背景色
+    --guiderBGColor #211B1B
+    // 阴影
+    --guiderShadow #1d1d1d
+    // logo
+    --guiderLogo aliceblue
+    // 可互动元素
+    --guiderTextIcon aliceblue
+    // 触碰
+    --guiderTextIconHover #C5A2A0
+    // 按下
+    --guiderTextIconClick #FFE6CC
+    //分割线
+    --guiderInterval #444444
+    // 菜单背景
+    --guiderMenuBGColor #C5A2A080
+    // 明暗主题开关
+    // 文字
+    --guiderMenuThemeSwitchText aliceblue
+    // 背景色
+    --guiderMenuThemeSwitchBGColor #F7B6BAB0
+
+    // 主页
+    // 顶部
+    // H1
+    --homeHeaderH1 #C5A2A0
+    // H3
+    --homeHeaderH3 aliceblue
+    // H5
+    --homeHeaderH5 #F0F8FFC9
+    // 头像
+    --homeHeaderImg #FFE6CC
+    
+    // 技术
+    // 背景色
+    --skillBGColor #3A3A3A4D
+    // 图标背景色
+    --skillIconColor #1D1D1DC4
+    // 标题
+    --skillH aliceblue
+    // 介绍
+    --skillText #F0F8FFC9
+
+    // 文章列表
+    // 背景
+    --articleListBGColor #3A3A3A4D
+    // 阴影
+    --articleListShadow #333333
+    // 标题文字
+    --articleListH aliceblue
+    // 简略文本
+    --articleListText #F0F8FFC9
+    // 标签信息
+    --articleListInfo #F0F8FFC9
+
+    // 页脚
+    // 背景色
+    --footerBGColor #211B1B
+    // 阴影
+    --footerShadow #1d1d1d
+    // 文本
+    --footerText aliceblue
+    // 可互动元素
+    --footerTextIcon #444444
+    // 触碰
+    --footerTextIconHover #C5A2A0
+    // 按下
+    --footerTextIconClick #FFE6CC
+    // 备案
+    --footerRegister #F7B6BA
