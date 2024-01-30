@@ -1,9 +1,9 @@
 .home
     width 100vw
     height auto
-    display: flex
-    flex-direction: column
-    align-items: center
+    display flex
+    flex-direction column
+    align-items center
 // 顶开导航栏
 .homeGuider
     width 100vw
@@ -12,7 +12,7 @@
 .homeTop
     max-width 1240px
     min-height calc(100vh - 64px)
-    margin 0 50px;
+    margin 0 50px
     display flex
     flex-direction column
     justify-content center
@@ -28,10 +28,16 @@
     flex-direction column
     justify-content center
     font-weight bold
+    text-shadow 6px 6px 8px
+    
 
     h1
         margin -10px 0px
-        color var(--homeHeaderH1)
+        // color var(--homeHeaderH1)
+        background linear-gradient(to right bottom, #FFB2AA, #FFC6AA, #FFD8B6, #FFE6CC)
+        color transparent
+        background-clip text
+        text-shadow 6px 6px 8px #ffe6cc
         font-size 56px
     h3
         color var(--homeHeaderH3)
