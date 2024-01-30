@@ -16,8 +16,8 @@ if (window.outerWidth < 950) {
 
     ScrollTrigger.create({
         trigger: ulElement, // 将ul元素作为触发元素
-        start: "top bottom", // 调整触发位置
-        end: "90% 80%", // 调整结束位置
+        start: "top 80%", // 调整触发位置
+        end: "90% 60%", // 调整结束位置
         scrub: 1,
         stagger: 0.3, // 使用stagger参数来逐个触发动画
         animation: timeline,
