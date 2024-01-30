@@ -11,7 +11,7 @@
         text-decoration none
 .indexContentArticleBox
     width 50rem
-    margin-top: 200px
+    margin-top 200px
 .posts
     width 100%
     height 200px
@@ -39,10 +39,14 @@
     height 40%
     margin-top 5px
     padding-left 5px
-    overflow scroll
+    overflow hidden
     border-left 3px solid var(--articleListText)
     color var(--articleListText)
     font-size 15px
+    text-overflow ellipsis
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 // 标签信息
 .post-info
     width 100%
