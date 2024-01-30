@@ -11,12 +11,14 @@
             font-size 18px
     .headerMenuSwitch
         margin-right 20px
+        .menuSwitch
+            display: flex
 
         label
             color var(--guiderTextIcon)
             font-size 25px
         input
-            display none
+            display none 
         input:checked +.headerModule
             opacity 1
             pointer-events auto
