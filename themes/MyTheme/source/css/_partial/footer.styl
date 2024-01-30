@@ -5,8 +5,9 @@ footer
     justify-content space-around
     align-items center
     background-color var(--footerBGColor)
-    border-top: 1px solid var(--footerborder)
+    border-top 1px solid var(--footerborder)
 .footerLeft
+    width 30%
     display flex
     flex-direction column
 
@@ -15,35 +16,36 @@ footer
     a
         color var(--footerRegister)
 .footerRight
+    width 30%
     display flex
     flex-direction column
     justify-content center
     align-items flex-end
 
     ul
-        margin-top 10px
         color var(--footerTextIcon)
         display flex
+        flex-wrap: wrap
+        justify-content: center
+        align-content: center
 
         p
             font-weight bold
-            line-height 32px
         li
+            height 24px
             margin 0px 5px
             list-style none
-            line-height 32px
+            display flex
+            justify-content center
+            align-content center
 
+            svg
+                font-size 20px
             a
                 text-decoration none
                 color var(--footerTextIcon)
                 font-weight bold
                 transition 0.5s
-
-                img
-                    width 32px
-                    height 32px
-                    background-color #555
-                    border-radius 32px
             a:hover
                 color var(--footerTextIconHover)
             a:active

@@ -11,14 +11,14 @@
             font-size 18px
     .headerMenuSwitch
         margin-right 20px
-        .menuSwitchLabel
-            display: flex
 
+        .menuSwitchLabel
+            display flex
         label
             color var(--guiderTextIcon)
             font-size 25px
         input
-            display none 
+            display none
         input:checked +.headerModule
             opacity 1
             pointer-events auto
@@ -104,20 +104,27 @@
             ul
                 display flex
                 flex-direction column
+
                 li
                     opacity 0
     // 页脚
     footer
         height auto
         flex-direction column
+        padding 30px 10px
 
         .footerLeft, .footerRight
+            width 100%
             align-items center
         .footerLeft
             margin 10px 0px
         .footerRight
             ul
+                width 100%
                 margin 0
+                flex-wrap wrap
+                justify-content center
+                align-items center
     // 文章列表
     .indexContentArticleBox
         width 90%
