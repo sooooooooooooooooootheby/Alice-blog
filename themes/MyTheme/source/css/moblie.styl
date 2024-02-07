@@ -114,10 +114,31 @@
         .footerLeft, .footerRight
             align-items center
         .footerLeft
+            order 2
             margin 10px 0px
         .footerRight
+            width 100%
+            
+            order 1
+            flex-direction row
+            justify-content space-between
+            align-items stretch
             ul
-                margin 0
+                flex-direction column
+                margin 0px 20px
+                li
+                    margin 0
+                    line-height none
+                    a
+                        display flex
+                        font-weight normal
+                        img
+                            width 24px
+                            height 24px
+                        p
+                            font-size 12px
+                            font-weight normal
+                            line-height 24px
     // 文章列表
     .indexContentArticleBox
         width 90%
