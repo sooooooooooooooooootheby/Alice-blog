@@ -19,12 +19,24 @@
     <div class="loading-page-span">
         <span class="loading-page-span2">Blog from Ririsu-Kokoromu๑•ิ.•ั๑</span>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // 等待所有内容加载完毕后隐藏加载页面
-            window.addEventListener("load", function () {
-                document.getElementById("loading-page").style.display = "none";
-            });
-        });
-    </script>
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // 等待所有内容加载完毕后隐藏加载页面
+        window.addEventListener("load", function () {
+            let load = gsap.timeline();
+            load.to('#wifi-loader', {
+                delay: 1,
+                scale: 0,
+                duration: 2,
+                ease: "back.in(1.9)",
+            });
+            load.to('#loading-page', {
+                opacity: 0,
+            });
+            setTimeout(() => {
+                document.getElementById("loading-page").style.display = "none";
+            }, 3500);
+        });
+    });
+</script>
