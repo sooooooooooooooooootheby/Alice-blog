@@ -5,7 +5,7 @@ valine:
   visitor: true # 访客数量
   avatar: 'retro' # 头像展示方式 Gravatar style : mm/identicon/monsterid/wavatar/retro/hide
   pageSize: 10 # 一页显示的评论数
-  placeholder: 'just go go' # 评论框占位文本
+  placeholder: '昵称处输入QQ号可以获取头像！' # 评论框占位文本
   background: /medias/comment_bg.png # 评论框背景
 menu:
   Home: /
