@@ -2,6 +2,7 @@
 abbrlink: ''
 categories:
 - - 前端
+cover: https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/%E4%BB%8E%E9%9B%B6%E5%86%99%E4%B8%80%E4%B8%AA%E5%9F%BA%E7%A1%80%E7%9A%84hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%2Fcover.jpg
 date: '2024-02-07T15:38:19.357193+08:00'
 tags:
 - hexo
@@ -315,3 +316,44 @@ deploy:
 这里的 `<%= config.title %>`是一个全局变量，也就是根目录下的 `_config.yml`hexo博客配置文件中的配置。除此之外还有 `theme`主题变量，也就是主题根目录下的  `_config.yml`主题配置文件中的配置。
 
 编写导航栏
+
+```html
+# layout/_partial/header.ejs
+
+<header>
+    <div class="title">
+        <a href="<%= url_for() %>" class="logo"><%= config.title %></a>
+    </div>
+    <nav class="navbar">
+        <ul class="menu">
+            <li class="menu-item">
+                <a href="/" class="menu-item-link">Home</a>
+            </li>
+            <li class="menu-item">
+                <a href="/categories" class="menu-item-link">Categories</a>
+            </li>
+            <li class="menu-item">
+                <a href="/tags" class="menu-item-link">Tags</a>
+            </li>
+            <li class="menu-item">
+                <a href="/archives" class="menu-item-link">Archives</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+```
+
+编写页脚
+
+```html
+# layout/_partial/footer.ejs
+
+<footer>
+    <p>Theme is <a href="/" target="_blank">Theme-example</a> by <a href="<%= config.url %>" target="_blank"><%= config.author %></a></p>
+    <p>Powered by <a href="https://hexo.io/" target="_blank" rel="nofollow">hexo</a> © <%- date(Date.now(), 'YYYY') %></p>
+</footer>
+```
+
+这样，我们就能得到一个简单的包含导航栏和页脚的简单页面
+
+![包含导航栏页脚的简单页面](https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/%E4%BB%8E%E9%9B%B6%E5%86%99%E4%B8%80%E4%B8%AA%E5%9F%BA%E7%A1%80%E7%9A%84hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%2Fhexo3.png)
