@@ -1,0 +1,317 @@
+---
+abbrlink: ''
+categories:
+- - 前端
+date: '2024-02-07T15:38:19.357193+08:00'
+tags:
+- hexo
+- 博客
+title: 从零写一个基础的hexo博客主题
+updated: '2024-02-21T14:14:35.337+08:00'
+---
+> 本文派生自[从零开始写一个Hexo主题](https://developer.aliyun.com/article/1071971)，在此基础上加入了一些常用功能，并写了一部分主题制作外的内容，保证前端小白（或者刚接触hexo的小白）能理解。
+>
+> 本文目的是为了了解Hexo博客主题的组成和编写方法，本文的示例博客页面不会有过多的样式，样式主要参考vitepress的默认主题。
+>
+> 本文使用的操作系统是windows11，在命令行部分和Linux，mac可能会有些出入，不过无关紧要，命令行的部分并不多。使用的包管理器是pnpm，如果你没使用过pnpm直接使用npm也没问题。
+
+# 前言
+
+在开始学习制作一个基础的Hexo博客主题前，你或许需要了解一些知识点
+
+* 模板引擎语法
+* css预处理器
+* YML语法
+* Hexo文档
+* nodejs的包管理
+
+本文使用的模板引擎为 `ejs`，使用的预处理器是 `Stylus`这。也是 hexo 项目预装了的 render 插件，如果想使用其他模板引擎或者其他 CSS 预处理器，可以安装相对应的 render 插件。当然你也可以选择直接使用原生的css而非预处理器，只不过原生css在维护上会有一些麻烦。
+
+本文的代码：
+
+# 目录结构
+
+当你在你的电脑上完成hexo的安装以及使用命令完成了建站，就会得到一个初始的hexo博客网站。默认的地址为localhost:4000
+
+```shell
+# 当你第一次使用hexo，需要安装hexo手脚架（需要安装node.js）
+pnpm install -g hexo-cli
+# 建立hexo博客项目
+hexo init hexoDemo
+# 进入博客项目
+cd hexoDemo
+# 安装所需依赖
+pnpm install
+# 在本地启动博客网站 c全拼clean，用于清空缓存；g全拼generate，用于生成静态文件；s全拼server，用于启动服务器
+hexo c ; hexo g ; hexo s
+```
+
+
+
+![初始hexo博客](https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/%E4%BB%8E%E9%9B%B6%E5%86%99%E4%B8%80%E4%B8%AA%E5%9F%BA%E7%A1%80%E7%9A%84hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%2Fhexo1.png)
+
+此时博客项目的目录如下
+
+```
+.hexoDemo
+├────.github
+├────node_modules
+├────public
+├────scaffolds
+├────source
+├────themes
+├──.gitignore
+├──_config.landscape.yml
+├──_config.yml
+├──db.json
+├──package.json
+├──pnpm-lock.yaml
+└──yarn.lock
+
+```
+
+或许会让人有些眼花缭乱，不过我们的目的是为了制作主题，所以我们只需要关注 `themes`和 `_config.yml`即可。前者是hexo的主题目录，我们制作或者从别人那下载的主题都需要放进这个目录，后者是hexo的配置文件，我们需要在这里修改博客所使用的主题。
+
+现在我们在 `themes`目录下新建一个文件夹 `themeDemo`作为我们的主题，文件名就是主题的名字，并且完善一下主题的目录。
+
+```
+.hexoDemo
+└─themes
+  └─themeDemo
+    ├─layout        # 主题布局模板文件
+    ├─source        # 资源文件目录，存放样式文件，js脚本等
+    └─_config.yml   # 主题配置文件
+```
+
+现在我们需要修改一下 `_config.yml`，注意，这里修改的配置文件是hexo的配置文件而非主题的配置文件。
+
+修改99行的 `theme`值为 `themeDemo`，也就是修改为主题的名字。
+
+```
+# _config.yml
+
+......
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: themeDemo                       # 默认值为landscape
+
+......
+
+```
+
+此时由于我们修改了配置文件，所以需要重新执行 `hexo c ; hexo g ; hexo s`的指令重启博客。
+
+重启完成后再打开localhost:4000，你会发现页面一片空白，并且控制台显示 `No layout: index.html`，这是正常的，因为我们还没开始编写主题。
+
+# 配置文件
+
+或许你会对两个 `_config.yml`配置文件产生一些疑惑，没事，这两个配置文件并不复杂。
+
+一个配置文件是位于站点根目录的，另一个是位于主题根目录的。
+
+这两个配置文件中，对于整个hexo博客系统最重要的是站点根目录的配置文件，这个配置文件中包含了各种信息，包括博客名称，作者，语言，插件配置等等。另一个位于主题根目录的配置文件用于配置插件，自定义页面等信息。
+
+这里会简单介绍一下根目录的配置文件中的键值作用。（大部分配置并不需要关心，所有有的部分看不懂没关系，只要它不影响到你的网站就可以）
+
+```
+# Site
+title: Hexo        # 网站的标题
+subtitle: ''       # 网站的副标题
+description: ''    # 网站的描述，会在搜索引擎中显示
+keywords:          # 网站的关键词。用于优化搜索引擎，帮助搜索引擎了解网站内容
+author: John Doe   # 网站的作者
+language: en       # 网站的语言
+timezone: ''       # 网站的时区，用于管理显示的日期时间
+
+# URL
+url: http://example.com                   # 网站的基本URL
+permalink: :year/:month/:day/:title/      # 永久连接格式，默认格式表示文章链接根据发布时间和标题生成
+permalink_defaults:                       # 永久链接的默认设置
+pretty_urls:                              # 链接美化选项
+  trailing_index: true                    # 是否在链接尾部添加 index.html
+  trailing_html: true                     # 是否在链接末尾添加 index
+
+# Directory                  # 设置网站目录的基本结构
+source_dir: source           # 存放源文件（css,js,image...）的目录
+public_dir: public           # 公共文件目录，存放生成的静态网页文件的目录
+tag_dir: tags                # 标签目录，存放标签页面的目录
+archive_dir: archives        # 存档目录，存放存档页面的目录
+category_dir: categories     # 分类目录，存放分类页面的目录
+code_dir: downloads/code     # 代码目录，存放代码文件的目录
+i18n_dir: :lang              # 国际化目录，存放国际化资源的目录
+skip_render:                 # 跳过渲染，指定哪些文件或目录不需要渲染
+
+# Writing
+new_post_name: :title.md          # 新文章的文件名格式
+default_layout: post              # 指定文章页的默认布局
+titlecase: false                  # 标题大小写转换，false表示不转换
+external_link:                    # 外部链接设置
+  enable: true                    # 是否启用在新标签页中打开外部链接
+  field: site                     # 外部链接设置的范围，site表示应用到整个站点
+  exclude: ''                     # 排除的外部链接
+filename_case: 0                  # 文件名大小写设置，设置为0表示保持原样
+render_drafts: false              # 渲染草稿文章，false表示不渲染草稿
+post_asset_folder: false          # 文章资源文件夹，指定是否为每篇文章创建一个资源文件夹，false表示不创建
+relative_link: false              # 相对链接，false表示不使用相对链接
+future: true                      # 未来文章日期，指定是否允许发布未来日期的文章，true表示允许
+syntax_highlighter: highlight.js  # 语法高亮的插件，这里指定了highlight.js
+highlight:                        # highlight语法高亮的设置
+  line_number: true               # 是否显示行号，true表示显示
+  auto_detect: false              # 是否自动检测语言，false表示不自动检测
+  tab_replace: ''                 # 选项卡替换，留空表示没有替换
+  wrap: true                      # 是否换行，true表示换行
+  hljs: false                     # 是否启用highlight.js，false表示不使用
+prismjs:                          # psismjs语法高亮的设置
+  preprocess: true                # 是否预处理，true表示预处理
+  line_number: true               # 是否显示行号，true表示显示
+  tab_replace: ''                 # 选项卡替换，留空表示没有替换
+
+# Home page setting
+index_generator:    # 首页的相关设置
+  path: ''          # 博客首页的根目录
+  per_page: 10      # 每页显示的文章数量
+  order_by: -date   # 文章的排序方式，-date表示按日期降序排序，意思是最新的文章排在前面
+
+# Category & Tag
+default_category: uncategorized   # 默认分类，如果文章没有指定分类时自动归类到uncategorized
+category_map:                     # 分类映射，例如想要把a分类映射到b，可以在这里设置
+tag_map:                          # 标签分类，和上一项相同
+
+# Metadata elements
+meta_generator: true    #元数据生成器。指定是否在生成的HTML页面中包含一个元数据标签来指示网站生成工具的名称和版本信息。
+
+# Date / Time format
+date_format: YYYY-MM-DD   # 文章发布的日期显示格式
+time_format: HH:mm:ss     # 文章发布的时间格式
+updated_option: 'mtime'   # 更新选项，指定如何处理文章更新时间的选项，mtime表示文件的修改时间为更新时间
+
+# Pagination
+per_page: 10            # 指定博客中每页显示的文章数量
+pagination_dir: page    # 指定存放分页文件的目录
+
+# Include / Exclude file(s)
+## 这些选项允许您指定要包含、排除或忽略的文件，通常应用于源文件夹。在这个例子中，这些选项被留空，表示没有进行额外的设置。
+include:    # 包含
+exclude:    # 排除
+ignore:     # 忽略
+
+# Extensions
+theme: themeDemo    # 指定文章的主题
+
+# Deployment
+deploy:
+  type: ''    #部署站点的类型
+```
+
+# 局部模板
+
+通过分析常见的博客网站可以发现，大部分博客网站都是由三部分组成：顶部导航栏，中间内容区域，以及底部页脚。每次点击跳转时，导航栏和页脚是不会发生变化的，只有中间的内容区域被重新渲染，因此，我们可以将通用的代码抽离成局部模板以复用
+
+在 `layout`目录下新建 `_partial`目录，并在该目录下添加 `head.ejs`,`header.ejs`以及 `footer.ejs`文件。
+
+* _partial 放置局部模板的目录
+* head.ejs 存放<head>标签的内容
+* header.ejs 存放导航栏的html内容
+* footer.ejs 存放页脚的html内容
+
+部分ejs的文件名不是固定的，你可以随心所欲地修改，只要你不会忘记这个文件的作用就行。
+
+```html
+# layout/_partial/head.ejs
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>Hexo</title>
+</head>
+```
+
+```html
+# layout/_partial/header.ejs
+
+<header>
+    我是导航栏
+</header>
+```
+
+```html
+# layout/_partial/footer.ejs
+
+<footer>
+    我是页脚
+</footer>
+```
+
+在 `laiout`目录下新建 `laiout.ejs`文件，用于引入ejs文件，`layout.ejs`文件是通用的布局文件模板，后续新增的ejs文件都会继承 `layout.ejs`，并填充进入 `body`。
+
+```html
+# layout/layout.ejs
+
+<!DOCTYPE html>
+<html>
+<%- partial('_partial/head') %>
+<body>
+    <div class="container">
+    <%- partial('_partial/header') %>
+    <%- body %>
+    <%- partial('_partial/footer') %>
+    </div>
+</body>
+</html>
+```
+
+> 注意！`body`很重要，后续我们添加的index.ejs或者自定义页面的内容模板引擎会自动填入 `body`。请不要写成下面这样，这是错误的，尽管他会正常运行，但是这样就没有使用模板引擎的意义了。
+>
+> ```
+> <!DOCTYPE html>
+> <html>
+> <%- partial('_partial/head') %>
+> <body>
+>     <div class="container">
+>     <%- partial('_partial/header') %>
+>     <%- partial('index') %>
+>     <%- partial('_partial/footer') %>
+>     </div>
+> </body>
+> </html>
+> ```
+
+# 首页
+
+首页是我们网站加载完成后的第一个页面。
+
+在 `layout`目录下新建 `index.ejs`文件，`index.ejs`首页将会继承 `layout.ejs`布局文件生成HTML文件。
+
+```html
+# layout/index.ejs
+<h1>Hello World</h1>
+```
+
+这时不需要重启服务器，直接在浏览器中刷新即可看见效果了。
+
+![首页](https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/%E4%BB%8E%E9%9B%B6%E5%86%99%E4%B8%80%E4%B8%AA%E5%9F%BA%E7%A1%80%E7%9A%84hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%2Fhexo2.png)
+
+# 编写导航栏和页脚
+
+前面我们已经完成了页面框架的搭建，现在需要往框架中填入内容完善我们的主题。
+
+以下两个文档我们将会频繁使用，最好先阅读一遍了解大概.
+
+* [Hexo | 变量](https://hexo.io/zh-cn/docs/variables)
+* [Hexo | 辅助函数](https://hexo.io/zh-cn/docs/helpers)
+
+```html
+# layout/_partial/head.ejs
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title><%= config.title %></title>
+</head>
+```
+
+这里的 `<%= config.title %>`是一个全局变量，也就是根目录下的 `_config.yml`hexo博客配置文件中的配置。除此之外还有 `theme`主题变量，也就是主题根目录下的  `_config.yml`主题配置文件中的配置。
+
+编写导航栏
