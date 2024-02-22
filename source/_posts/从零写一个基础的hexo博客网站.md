@@ -10,13 +10,17 @@ tags:
 title: 从零写一个基础的hexo博客主题
 updated: '2024-02-21T14:14:35.337+08:00'
 ---
+---
+title: Hello World
+---
+
 教你如何从新建一个Hexo博客项目到编写一个属于你自己的博客主题！
 
 <!--more-->
 
-> 本文派生自[从零开始写一个Hexo主题](https://developer.aliyun.com/article/1071971)，在此基础上加入了一些常用功能，并写了一部分主题制作外的内容，保证前端小白（或者刚接触hexo的小白）能理解。
+> 本文派生自[从零开始写一个Hexo主题](https://developer.aliyun.com/article/1071971)，因为原来这篇文章我感觉缺少一些细节（但是对于刚接触hexo的小白来说足够了），所以在此基础上加入了一些常用功能，并写了一部分主题制作外的内容，保证前端小白（或者刚接触hexo的小白）能理解。
 >
-> 本文目的是为了了解Hexo博客主题的组成和编写方法，本文的示例博客页面不会有过多的样式，样式主要参考vitepress的默认主题。
+> 本文目的是为了了解Hexo博客主题的组成和编写方法，本文的示例博客页面不会有过多的样式，样式主要参考vitepress的默认主题（啥？你问我为什么不直接用vitepress？因为vitepress主题的入门门槛比较高，并不适合前端小白（包括我XD））。
 >
 > 本文使用的操作系统是windows11，在命令行部分和Linux，mac可能会有些出入，不过无关紧要，命令行的部分并不多。使用的包管理器是pnpm，如果你没使用过pnpm直接使用npm也没问题。
 
@@ -36,6 +40,8 @@ updated: '2024-02-21T14:14:35.337+08:00'
 
 本文的代码：
 
+在示例中会用到hexo的[官方图标](https://hexo.io/logo.svg)，本文教程中图保存在主题目录下的 `source/img`中。
+
 # 目录结构
 
 当你在你的电脑上完成hexo的安装以及使用命令完成了建站，就会得到一个初始的hexo博客网站。默认的地址为localhost:4000
@@ -52,8 +58,6 @@ pnpm install
 # 在本地启动博客网站 c全拼clean，用于清空缓存；g全拼generate，用于生成静态文件；s全拼server，用于启动服务器
 hexo c ; hexo g ; hexo s
 ```
-
-
 
 ![初始hexo博客](https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/%E4%BB%8E%E9%9B%B6%E5%86%99%E4%B8%80%E4%B8%AA%E5%9F%BA%E7%A1%80%E7%9A%84hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%2Fhexo1.png)
 
@@ -293,7 +297,10 @@ deploy:
 
 ```html
 # layout/index.ejs
-<h1>Hello World</h1>
+
+<home>
+    <h1>hello world</h1>
+</home>
 ```
 
 这时不需要重启服务器，直接在浏览器中刷新即可看见效果了。
@@ -328,6 +335,7 @@ deploy:
 
 <header>
     <div class="title">
+        <img src="<%= url_for('img/logo.svg') %>" alt="logo">
         <a href="<%= url_for() %>" class="logo"><%= config.title %></a>
     </div>
     <nav class="navbar">
@@ -363,3 +371,318 @@ deploy:
 这样，我们就能得到一个简单的包含导航栏和页脚的简单页面
 
 ![包含导航栏页脚的简单页面](https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/%E4%BB%8E%E9%9B%B6%E5%86%99%E4%B8%80%E4%B8%AA%E5%9F%BA%E7%A1%80%E7%9A%84hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%2Fhexo3.png)
+
+# 添加主题配置
+
+如果我们需要给导航菜单根据我们的需要添加不同的项目，在上面例子的写法并不方便修改以及后期维护。所以我们可以在主题的配置文件中添加导航菜单的配置。
+
+```
+# themeDemo/_config.yml
+
+logo: <%= url_for('img/logo.svg') %>
+menu:
+  home: /
+  categories: /categories
+  tags: /tags
+  archives: /archives
+  post: /post
+```
+
+修改好主题配置文件我们就可以把导航栏的菜单设置修改为下面的样子。
+
+```
+# layout/_partial/header.ejs
+
+<header>
+    <div class="title">
+        <img src="<%= url_for('img/logo.svg') %>" alt="logo">
+        <a href="<%= url_for() %>" class="logo"><%= config.title %></a>
+    </div>
+    <nav class="navbar">
+        <ul class="menu">
+            <% for (name in theme.menu) { %>
+            <li class="menu-item">
+                <a href="<%- url_for(theme.menu[name]) %>" class="menu-item-link"><%= name %></a>
+            </li>
+            <% } %>
+        </ul>
+    </nav>
+</header>
+<headerBar></headerBar>
+```
+
+或许这种动态配置写法会让你有些头大，但是这样会方便你的后期维护。假如你想要在导航栏添加一个自定义页面的按钮，只需要在主题配置文件中添加一个键值即可，当然关于自定义页面我们后面会说到。
+
+# 添加自定义页面
+
+说实话这个部分应该放到后面再说的，但是因为我们是按照vitepress的默认主题进行编写的，所以这个部分还是放到前面比较合适。
+
+这个页面我们将同时包含文章列表，文章详细页和文章目录
+
+```
+# 新建文章页 layout/post.ejs
+
+<post>
+    <postList>
+        <div class="list">
+            <span>
+                <a href="/post">文章列表</a>
+            </span>
+            <% if (site.posts && site.posts.length) { %>
+                <% site.posts.each(function (post) { %>
+                    <section>
+                        <a href="<%- url_for(post.path) %>">
+                            <%= post.title %>
+                        </a>
+                    </section>
+                <% }) %>
+            <% } %>
+        </div>
+    </postList>
+    <article>
+        <div class="post">
+            <div class="post-title">
+                <h2 class="title">
+                    <%= page.title %>
+                </h2>
+            </div>
+            <div class="post-meta">
+                <span class="post-time"><%- date(page.date, "YYYY-MM-DD" ) %></span>
+            </div>
+            <div class="post-content">
+                <%- page.content %>
+            </div>
+        </div>
+    </article>
+    <toc>
+        <div class="toc">
+            <p>目录</p>
+            <%- toc(page.content) %>
+        </div>
+    </toc>
+</post>
+```
+
+然后在终端执行 `hexo new page post`手动生成新页面，并在新生成的文件中添加键值，以此告诉hexo新页面的目录。
+
+```
+# 站点根目录/source/post/index.md
+
+---
+title: post
+date: 2024-02-22 11:16:01
+layout: post           # 默认是没有这一键值的，需要我们手动添加
+---
+```
+
+# 添加样式
+
+至此，我们完成了一个基本Hexo博客网站所需的功能，样式文件我们会使用stylus css预处理器添加样式。
+
+这里不会详细说每个步骤该怎么做，因为这并不是文章的重点。如果对stylus有疑问可以翻阅[stylus官方文档](https://www.stylus-lang.cn/)，如果你想要使用sass也是没有任何问题的，但是你想使用原生css还是劝你费点劲用预处理器，因为原生css真的会对你之后的开发维护带来困难。
+
+## 实时刷新插件
+
+顺带在这里推荐一个插件 `Browsersync`，可以实时监控文件变化并刷新网页，这样你就不用写一点要切回浏览器刷新了。
+
+在任意目录执行安装Browsersync
+
+```shell
+pnpm install -g browser-sync
+```
+
+在你的博客目录下执行安装hexo的刷新插件
+
+```shell
+pnpm install hexo-browsersync --save
+```
+
+两个安装完成后执行 `hexo c ; hexo g ; hexo s`即可。
+
+这时控制台会出现三个URL，不用管上面的3001端口的URL，直接接着使用4000端口的即可。
+
+## 开始编写样式
+
+在 `source`目录下新建 `css`文件夹作为整个博客站点的css目录，在css中新建 `——partial`文件夹作为局部模板的css目录，目录结构如下。
+
+```
+source
+├──css
+│  └──_partial
+│     ├──footer.styl
+│     └──header.styl
+├──index.styl
+├──layout.styl
+└──post.styl
+```
+
+```
+# layout.styl
+*
+    margin 0
+    padding 0
+
+body
+    width 100vw
+    height 100vh
+
+::-webkit-scrollbar
+    display: none
+@import "_partial/header"
+@import "_partial/footer"
+@import "index"
+@import "post"
+```
+
+```
+# index.styl
+
+home
+    width 100vw
+    min-height: 100vh
+    display: flex
+```
+
+```
+# _partial/header.styl
+
+header
+    width 100vw
+    height 64px
+    position fixed
+    display flex
+    justify-content space-between
+    align-items center
+    background-color: #ffffff
+    border-bottom: 1px solid #e2e2e3
+
+    a
+        text-decoration none
+        color #444
+        transition 0.5s
+
+    a:hover
+        color #5672CD
+
+    div
+        display flex
+        align-items center
+        margin-left 64px
+
+        img
+            width 24px
+            height 24px
+            margin-right 10px
+
+        a
+            font-weight bold
+            font-size: 16px
+
+    nav
+        margin-right 64px
+
+        ul
+            display flex
+
+            li
+                list-style none
+                margin 0px 5px
+                font-size: 14px
+headerBar
+    width 100vw
+    height 64px
+    display: flex
+```
+
+```
+# _partial/footer.styl
+
+footer
+    width 100vw
+    height: 113px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    color: #3C3C43C7
+    border-top: 1px solid #e2e2e3
+    p
+        margin: 2px 0px
+        font-size: 14px
+    a
+        color: #3C3C43C7
+```
+
+```
+# post.styl
+
+post
+    width 100vw
+    min-height 100vh
+    display flex
+    justify-content space-between
+
+    postList
+        width 20%
+        height 100vh
+        overflow scroll
+        background-color #F6F6F7
+
+        .list
+            margin 20px 0px 0px 64px
+
+            span
+                font-weight bold
+                font-size 14px
+
+                a
+                    color #3c3c43
+                    text-decoration none
+
+            section
+                padding 4px 0px
+
+                a
+                    font-size 14px
+                    color #3c3c43c7
+                    text-decoration none
+                    transition 0.3s
+
+                a:hover
+                    color #5672CD
+
+    article
+        width 60%
+        height 100vh
+        overflow scroll
+        .post
+            padding: 48px 64px 0px
+
+    toc
+        width 20%
+        height 100vh
+        overflow scroll
+        border-left: 1px solid #e2e2e3
+        div
+            padding: 48px 6px
+            p
+                font-weight bold
+                font-size 14px
+                color #3c3c43
+                margin-left: 10px
+            ol
+                list-style-type: none;
+                li
+                    margin-left: 10px
+                    padding 4px 0px
+                    a
+                        font-size 14px
+                        color #3c3c43c7
+                        text-decoration none
+                        transition 0.5s
+                        .toc-number
+                            display: none
+
+                    a:hover
+                        color #5672CD
+```
