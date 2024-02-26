@@ -1,5 +1,20 @@
 <footer>
-    <p>Theme is <a href="https://github.com/sooooooooooooooooootheby/hexo-theme-vitepress" target="_blank">theme-vitepress</a> by <a href="<%= config.url %>" target="_blank"><%= config.author %></a></p>
-    <p>Powered by <a href="https://hexo.io/" target="_blank" rel="nofollow">hexo</a> &copy; <%- date(Date.now(), 'YYYY') %></p>
-    <p><a class="moeICP" href="https://icp.gov.moe/?keyword=20240328" target="_blank">♥萌ICP备20240328号♥</a></p>
+    <div class="footer">
+        <div class="info">
+            <div class="title">
+                <img src="<%= url_for('img/logo.webp') %>" alt="logo">
+                <p><%= theme.homeIntroduce.one %></p>
+            </div>
+            <div class="text">
+            </div>
+        </div>
+        <div class="link">
+
+        </div>
+    </div>
+    <div class="webRelevant">
+        <p>Theme is <a href="https://github.com/sooooooooooooooooootheby/hexo-theme-vitepress" target="_blank">theme-vitepress</a> by <a href="<%= config.url %>" target="_blank"><%= config.author %></a></p>
+        <p>Powered by <a href="https://hexo.io/" target="_blank" rel="nofollow">hexo</a> &copy; <%- date(Date.now(), 'YYYY') %></p>
+        <p><a class="moeICP" href="https://icp.gov.moe/?keyword=20240328" target="_blank">♥萌ICP备20240328号♥</a></p>
+    </div>
 </footer>
