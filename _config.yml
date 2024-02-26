@@ -4,21 +4,21 @@
 
 # Site
 title: ~Wonderland~
-subtitle: 'Ririsu Blog'
-description: ''
-keywords:
-author: RirisuKokoromu
+subtitle: ''
+description: 'Sooooooooooooooooootheby!'
+keywords: 'blog'
+author: Sooooooooooooooooootheby!
 language: zh_CN
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
-permalink: :year/:month/:day/:title/
+url: http://sooooooooooooooooootheby.xyz
+permalink: :title/
 permalink_defaults:
 pretty_urls:
-  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
-  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+  trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: false # Set to false to remove trailing '.html' from permalinks
 
 # Directory
 source_dir: source
@@ -101,7 +101,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: MyTheme
+theme: hexo-theme-vitepress
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

@@ -1,0 +1,79 @@
+#菜单
+menu:
+  Home: /
+  Post: /post
+
+#社交链接
+link:
+  - 
+    name: Github
+    url: https://github.com/sooooooooooooooooootheby
+    icon: github2
+  - 
+    name: Discord
+    url: https://discord.gg/BuegG6aT
+    icon: discord
+
+#主页介绍
+homeIntroduce:
+  one: ~Wonderland~
+  p1: Welcome my blog👋
+  p2: This is my best Website
+
+# 主页按钮
+homeButton:
+  -
+    name: cancan my repositories
+    url: https://github.com/sooooooooooooooooootheby
+    buttonType: brand
+
+#主页容器
+homeContainer:
+  -
+    svg: HTML
+    span: HTML、CSS、Javascript
+    p: 前端三件套辣
+  -
+    svg: Vue
+    span: Vue.js
+    p: 渐进式JavaScript 框架。易学易用，性能出色，适用场景丰富的 Web 前端框架。
+  -
+    svg: GSAP
+    span: GSAP
+    p: 为专业人士构建的非常健壮的JavaScript动画库
+  -
+    svg: stylus
+    span: stylus
+    p: 一个富于表现力、动态的、健壮的CSS预处理器。
+  -
+    svg: sass
+    span: sass
+    p: 世界上最成熟、最稳定、最强大的专业级CSS扩展语言！
+
+# 表情包
+meme:
+  FRICKMeNot: 'https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/meme%2FFRICKMeNot.png'
+  MatildaDizzy: 'https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/meme%2FMatildaDizzy.png'
+  MatildaSob: 'https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/meme%2FMatildaSob.png'
+  MatildaSumug: 'https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/meme%2FMatildaSumug.png'
+  MedPoc_Sip: 'https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/meme%2FMedPoc_Sip.png'
+  Nodnetto: 'https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/meme%2FNodnetto.gif'
+  OMEGULUS: 'https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/meme%2FOMEGULUS.png'
+  RegulusDance: 'https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/meme%2FRegulusDance.gif'
+  RegulusHeh: 'https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/meme%2FRegulusHeh.png'
+  RegulusNanikore: 'https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/meme%2FRegulusNanikore.png'
+  RegulusWheeze: 'https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/meme%2FRegulusWheeze.png'
+  RegulusWow: 'https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/meme%2FRegulusWow.png'
+  RegulusYay: 'https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/meme%2FRegulusYay.png'
+  SchneiderWeird: 'https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/meme%2FSchneiderWeird.png'
+  SonettoHeart: 'https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/meme%2FSonettoHeart.png'
+  SothebyTehe: 'https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/meme%2FSothebyTehe.png'
+  SothebyUnion: 'https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/meme%2FSothebyUnion.png'
+  SpathodeaWisdom: 'https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/meme%2FSpathodeaWisdom.png'
+  VerFear: 'https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/meme%2FVerFear.png'
+  VertinAngy: 'https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/meme%2FVertinAngy.png'
+  VertinLike: 'https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/meme%2FVertinLike.png'
+  VertinPunch: 'https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/meme%2FVertinPunch.gif'
+  VertinSleep: 'https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/meme%2FVertinSleep.png'
+  anansquish: 'https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/meme%2Fanansquish.png'
+  charlieworried: 'https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/meme%2Fcharlieworried.png'
