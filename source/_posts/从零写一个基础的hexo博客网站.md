@@ -8,9 +8,8 @@ tags:
 - hexo
 - 博客
 title: 从零写一个基础的hexo博客主题
-updated: '2024-02-21T14:14:35.337+08:00'
+updated: '2024-02-22T15:05:36.036+08:00'
 ---
-
 教你如何从新建一个Hexo博客项目到编写一个属于你自己的博客主题！
 
 <!--more-->
@@ -36,6 +35,8 @@ updated: '2024-02-21T14:14:35.337+08:00'
 本文使用的模板引擎为 `ejs`，使用的预处理器是 `Stylus`这。也是 hexo 项目预装了的 render 插件，如果想使用其他模板引擎或者其他 CSS 预处理器，可以安装相对应的 render 插件。当然你也可以选择直接使用原生的css而非预处理器，只不过原生css在维护上会有一些麻烦。
 
 本文的代码：
+
+本文的完整主题代码：
 
 在示例中会用到hexo的[官方图标](https://hexo.io/logo.svg)，本文教程中图保存在主题目录下的 `source/img`中。
 
@@ -373,7 +374,7 @@ deploy:
 
 如果我们需要给导航菜单根据我们的需要添加不同的项目，在上面例子的写法并不方便修改以及后期维护。所以我们可以在主题的配置文件中添加导航菜单的配置。
 
-```
+```yaml
 # themeDemo/_config.yml
 
 logo: <%= url_for('img/logo.svg') %>
@@ -387,7 +388,7 @@ menu:
 
 修改好主题配置文件我们就可以把导航栏的菜单设置修改为下面的样子。
 
-```
+```html
 # layout/_partial/header.ejs
 
 <header>
@@ -416,7 +417,7 @@ menu:
 
 这个页面我们将同时包含文章列表，文章详细页和文章目录
 
-```
+```html
 # 新建文章页 layout/post.ejs
 
 <post>
@@ -462,7 +463,7 @@ menu:
 
 然后在终端执行 `hexo new page post`手动生成新页面，并在新生成的文件中添加键值，以此告诉hexo新页面的目录。
 
-```
+```yaml
 # 站点根目录/source/post/index.md
 
 ---
@@ -513,7 +514,7 @@ source
 └──post.styl
 ```
 
-```
+```css
 # layout.styl
 *
     margin 0
@@ -531,7 +532,7 @@ body
 @import "post"
 ```
 
-```
+```css
 # index.styl
 
 home
@@ -540,7 +541,7 @@ home
     display: flex
 ```
 
-```
+```css
 # _partial/header.styl
 
 header
@@ -591,7 +592,7 @@ headerBar
     display: flex
 ```
 
-```
+```css
 # _partial/footer.styl
 
 footer
@@ -610,7 +611,7 @@ footer
         color: #3C3C43C7
 ```
 
-```
+```css
 # post.styl
 
 post
@@ -683,3 +684,135 @@ post
                     a:hover
                         color #5672CD
 ```
+
+文章的布局样式是默认样式，有需要请自己修改。
+
+# 添加分页
+
+由于我们是根据vitepress默认主题编写的主题，分页功能在这里没有什么作用，因此不做重点。
+
+```html
+# 新建 _partial/paginator.ejs
+
+<% if (page.total > 1){ %>
+    <nav class="page-nav">
+    <%- paginator({
+        prev_text: "« Prev",
+        next_text: "Next »"
+    }) %>
+    </nav>
+<% } %>
+```
+
+在有需要的地方添加下面的标签以引用分页功能
+
+```html
+<%- partial('_partial/paginator') %>
+```
+
+# 添加归档页
+
+归档页，标签页，分类页本质上就是自定义页面，所以在创建这个页面之前需要使用 `hexo new page [页面名]`指令，例如创建归档页需要使用 `hexo new page archive`，并在 `index.md`中添加 `layout`键值。如果无法理解请参考添加自定义页面。
+
+```html
+# 新建 layout/archive.ejs
+
+<section class="archive">
+    <ul class="post-archive">
+    <% page.posts.each(function (post) { %>
+        <li class="post-item">
+            <span class="post-date"><%= date(post.date, "YYYY-MM-DD") %></span>
+            <a class="post-title" href="<%- url_for(post.path) %>"><%= post.title %></a>
+        </li>
+    <% }) %>
+    </ul>
+</section>
+<%- partial('_partial/paginator') %>
+```
+
+```css
+# 新建 css/archive.ejs
+
+.archive {
+    margin: 1em auto;
+    padding: 30px 50px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 2px #ddd;
+    .post-archive {
+        list-style: none;
+        padding: 0;
+        .post-item {
+            margin: 5px 0;
+            .post-date {
+                display: inline-block;
+                margin-right: 10px;
+                color: #BABABA;
+            }
+            .post-title {
+                color: #368CCB;
+                text-decoration: none;
+            }
+        }
+    }
+}
+```
+
+归档页，标签页，分类页的css样式都是共用 `archive.styl`的css样式。
+
+# 添加标签页
+
+```html
+# 新建 layout/tags.ejs
+
+<section class="archive">
+    <ul class="post-archive">
+    <% site.tags.each(function (tag) { %>
+        <span><%= tag.name %></span>
+        <% tag.posts.forEach(function(post) { %>
+        <li class="post-item">
+            <span class="post-date"><%= date(post.date, "YYYY-MM-DD") %></span>
+            <a class="post-title" href="<%- url_for(post.path) %>"><%= post.title %></a>
+        </li>
+        <% }) %>
+    <% }) %>
+    </ul>
+</section>
+```
+
+# 添加分类页
+
+```html
+# 新建 layout/categories.ejs
+
+<section class="archive">
+    <ul class="post-archive">
+    <% site.categories.each(function (category) { %>
+        <span><%= category.name %></span>
+        <% category.posts.forEach(function(post) { %>
+        <li class="post-item">
+            <span class="post-date"><%= date(post.date, "YYYY-MM-DD") %></span>
+            <a class="post-title" href="<%- url_for(post.path) %>"><%= post.title %></a>
+        </li>
+        <% }) %>
+    <% }) %>
+    </ul>
+</section>
+```
+
+至此，一个基础的hexo博客主题就写完了，本教程完整目录如下。
+
+![完整目录](https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/%E4%BB%8E%E9%9B%B6%E5%86%99%E4%B8%80%E4%B8%AA%E5%9F%BA%E7%A1%80%E7%9A%84hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%2Fhexo4.png)
+
+最后再贴一遍代码链接
+
+本文的代码：
+
+本文的完整主题代码：
+
+
+# 总结
+
+其实说白了，Hexo就是把那些 Markdown 文件，按照我们编写的对应布局模板，填上对应的数据生成 HTML 页面，然后在编译的过程中将JS/CSS等文件引入HTML，然后生成每个页面的对应HMTL静态文件。
+
+而Hexo主题的作用就是决定每个布局模板长什么样。
