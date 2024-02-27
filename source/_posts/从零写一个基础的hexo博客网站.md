@@ -34,9 +34,7 @@ updated: '2024-02-22T15:05:36.036+08:00'
 
 本文使用的模板引擎为 `ejs`，使用的预处理器是 `Stylus`这。也是 hexo 项目预装了的 render 插件，如果想使用其他模板引擎或者其他 CSS 预处理器，可以安装相对应的 render 插件。当然你也可以选择直接使用原生的css而非预处理器，只不过原生css在维护上会有一些麻烦。
 
-本文的代码：
-
-本文的完整主题代码：
+本文的完整代码：https://github.com/sooooooooooooooooootheby/hexo-theme-vitepress/tree/main/hexoDemo
 
 在示例中会用到hexo的[官方图标](https://hexo.io/logo.svg)，本文教程中图保存在主题目录下的 `source/img`中。
 
@@ -804,11 +802,7 @@ post
 
 ![完整目录](https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/%E4%BB%8E%E9%9B%B6%E5%86%99%E4%B8%80%E4%B8%AA%E5%9F%BA%E7%A1%80%E7%9A%84hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%2Fhexo4.png)
 
-最后再贴一遍代码链接
-
-本文的代码：
-
-本文的完整主题代码：
+>最后再贴一遍代码链接:https://github.com/sooooooooooooooooootheby/hexo-theme-vitepress/tree/main/hexoDemo
 
 
 # 总结
