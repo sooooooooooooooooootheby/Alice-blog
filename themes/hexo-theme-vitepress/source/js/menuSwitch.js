@@ -1,13 +1,29 @@
-// 导航栏的按钮操作逻辑
-let menuSwitch = document.getElementById("menuSwitch");
+// 导航栏的按钮操作逻辑,通过切换类名达到
 
-menuSwitch.addEventListener("change", function () {
-    let menu = document.getElementById("menu");
-    if (menu.classList.contains("hidemenu")) {
-        menu.classList.remove("hidemenu");
-        menu.classList.add("showmenu");
+// 平板端
+const padMenuSwitch = document.getElementById('padMenuSwitch');
+const control = document.getElementById('control');
+
+padMenuSwitch.addEventListener('change', (event) => {
+    if (padMenuSwitch.checked) {
+        this.control.classList.remove('hideControl');
+        this.control.classList.add('showControl');
     } else {
-        menu.classList.remove("showmenu");
-        menu.classList.add("hidemenu");
+        this.control.classList.add('hideControl');
+        this.control.classList.remove('showControl');
+    }
+});
+
+// 手机端
+const phoneMenuSwitch = document.getElementById('phoneMenuSwitch');
+const menu = document.getElementById('menu');
+
+phoneMenuSwitch.addEventListener('change', (event) => {
+    if (phoneMenuSwitch.checked) {
+        this.menu.classList.remove('hidemenu');
+        this.menu.classList.add('showmenu');
+    } else {
+        this.menu.classList.add('hidemenu');
+        this.menu.classList.remove('showmenu');
     }
 });

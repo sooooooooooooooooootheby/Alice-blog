@@ -4,15 +4,7 @@
     .headerBox
         .title
             margin-left 24px
-        .showmenu
-            height: calc(100vh - 64px)
-            opacity 1
-            pointer-events auto
-        .hidemenu
-            height: 1px
-            overflow hidden
-            opacity 0
-            pointer-events none
+        
         .menu
             width 100vw
             flex-direction: column
@@ -46,16 +38,29 @@
                     border-radius: 8px
                 ul
                     margin-top: 16px
+                .isolation
+                    display: none
 
+        .showmenu
+            height: calc(100vh - 64px)
+            opacity 1
+            pointer-events auto
+        .hidemenu
+            height: 1px
+            overflow hidden
+            opacity 0
+            pointer-events none
+        
         // 开关控件
-        .menuSwitchLab
+        .padMenuSwitchLab
+            display: none
+        .phoneMenuSwitchLab
             display block
             position relative
             cursor pointer
             font-size 10px
             user-select none
             margin-right 24px
-
             input
                 position absolute
                 opacity 0
@@ -90,7 +95,7 @@
             span:nth-child(3)
                 top 90%
 
-        .menuSwitchLab input:checked + .checkmark span:nth-child(1)
+        .phoneMenuSwitchLab input:checked + .checkmark span:nth-child(1)
             top 50%
             transform translateY(-50%) rotate(45deg)
             -webkit-transform translateY(-50%) rotate(45deg)
@@ -98,7 +103,7 @@
             -ms-transform translateY(-50%) rotate(45deg)
             -o-transform translateY(-50%) rotate(45deg)
 
-        .menuSwitchLab input:checked + .checkmark span:nth-child(2)
+        .phoneMenuSwitchLab input:checked + .checkmark span:nth-child(2)
             top 50%
             transform translateY(-50%) rotate(-45deg)
             -webkit-transform translateY(-50%) rotate(-45deg)
@@ -106,7 +111,7 @@
             -ms-transform translateY(-50%) rotate(-45deg)
             -o-transform translateY(-50%) rotate(-45deg)
 
-        .menuSwitchLab input:checked + .checkmark span:nth-child(3)
+        .phoneMenuSwitchLab input:checked + .checkmark span:nth-child(3)
             transform translateX(-50px)
             -webkit-transform translateX(-50px)
             -moz-transform translateX(-50px)

@@ -13,74 +13,77 @@ header
     justify-content space-between
     align-items center
 
-.title
-    display flex
-    align-items center
-    margin-left 64px
+    .title
+        display flex
+        align-items center
+        margin-left 64px
 
-    img
-        width 24px
-        height 24px
-        margin-right 10px
+        img
+            width 24px
+            height 24px
+            margin-right 10px
 
-    a
-        font-weight bold
-        font-size 16px
-        color: var(--header-title-color)
-        text-decoration: none
+        a
+            font-weight bold
+            font-size 16px
+            color: var(--header-title-color)
+            text-decoration: none
 
-.menu
-    height 100%
-    margin-right 64px
-    display flex
-    justify-content center
-    align-items center
+    .menu
+        height 100%
+        margin-right 64px
+        display flex
+        justify-content center
+        align-items center
 
-.list
-    ul
-        display: flex
-        li
-            list-style none
-            font-size 14px
-            margin 0 12px
-            a
-                text-decoration none
-                color var(--header-a-color)
-                transition 0.5s
+        .list
+            ul
+                display: flex
+                li
+                    list-style none
+                    font-size 14px
+                    margin 0 12px
+                    a
+                        text-decoration none
+                        color var(--header-a-color)
+                        transition 0.5s
 
-            a:hover
-                color var(--header-a-hover-color)
+                    a:hover
+                        color var(--header-a-hover-color)
 
-.menuSwitchLab,.menuSwitch,.controlSwitchLab,.controlSwitch
+        .control
+            display: flex
+            justify-content: center
+            align-items: center
+
+            .appearance
+                display: flex
+                align-items: center
+                span
+                    display: none
+
+            .link
+                ul
+                    display: flex
+                    li
+                        list-style none
+                        font-size 20px
+                        margin 0px 6px
+                        svg
+                            color: var(--header-svg-color)
+                            transition: 0.2s
+                        svg:hover
+                            color: var(--header-svg-hover-color)
+
+        .isolation                                                                                                                                  
+            width 1px
+            height 20px
+            margin 0 20px
+            background-color var(--header-isolation-background-color)
+
+// 隐藏移动端的组件
+.phoneMenuSwitchLab,.padMenuSwitchLab
     display: none
-.appearance
-    display: flex
-    align-items: center
-    span
-        display: none
-
-.control
-    height: 100%
-    display: flex
-    align-items: center
-
-    ul
-        display: flex
-        li
-            list-style none
-            font-size 20px
-            margin 0px 6px
-            svg
-                color: var(--header-svg-color)
-                transition: 0.2s
-            svg:hover
-                color: var(--header-svg-hover-color)
-
-.isolation
-    width 1px
-    height 20px
-    margin 0 20px
-    background-color var(--header-isolation-background-color)
 
 .noTop
     background-color var(--header-notop-background-color)

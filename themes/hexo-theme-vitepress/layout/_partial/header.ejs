@@ -6,15 +6,7 @@
                 <%= config.title %>
             </a>
         </div>
-        <label class="menuSwitchLab">
-            <input type="checkbox" id="menuSwitch">
-            <div class="checkmark">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-        </label>
-        <%- js('js/menuSwitch') %>
+        <!-- 菜单 -->
         <div class="menu hidemenu" id="menu">
             <div class="list">
                 <ul>
@@ -28,31 +20,29 @@
                 </ul>
             </div>
             <div class="isolation"></div>
-            <label for="controlSwitch" class="controlSwitchLab">
-                <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#icon-sandian1"></use>
-                </svg>
-            </label>
-            <input type="checkbox" id="controlSwitch" class="controlSwitch">
-            <div class="control">
+            <div class="control hideControl" id="control">
                 <div class="appearance">
                     <span>Appearance</span>
                     <input type="checkbox" id="themeCheckbox" class="theme-checkbox">
                 </div>
                 <div class="isolation"></div>
-                <ul>
-                    <% for (item of theme.link) { %>
-                        <li>
-                            <a href="<%= item.url %>">
-                                <svg class="icon" aria-hidden="true">
-                                    <use xlink:href="#icon-<%= item.icon %>"></use>
-                                </svg>
-                            </a>
-                        </li>
-                    <% } %>
-                </ul>
+                <div class="link">
+                    <ul>
+                        <% for (item of theme.link) { %>
+                            <li>
+                                <a href="<%= item.url %>">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-<%= item.icon %>"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                        <% } %>
+                    </ul>
+                </div>
             </div>
         </div>
+        <!-- 移动端的菜单开关 -->
+        <%- partial('menuSwitch') %>
     </div>
     <!-- 导航栏 -->
     <%- js('js/header') %>
