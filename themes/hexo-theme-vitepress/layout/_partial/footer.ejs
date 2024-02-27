@@ -6,15 +6,50 @@
                 <p><%= theme.homeIntroduce.one %></p>
             </div>
             <div class="text">
+                <p>欢迎来到我的博客！这里是互联网的角落之一,被我用来堆放学习笔记。</p>
+                <p>如果想要交换友链可以通过邮箱联系我。(只需要给我提供图片、链接、名字即可，收到我会回信的。)</p>
+                <span>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-gmail"></use>
+                    </svg>
+                    therese.sjdyka@gmail.com
+                </span>
+            </div>
+            <div class="support">
+                <p>本站由以下技术支持运行</p>
+                <ul>
+                    <li><span>Web frame</span><a href="https://hexo.io/zh-cn/">Hexo</a></li>
+                    <li><span>Source</span><a href="https://github.com/">github</a></li>
+                    <li><span>Web trusteeship</span><a href="https://vercel.com/">vercel</a></li>
+                    <li><span>DNS</span><a href="https://porkbun.com/">porkbun</a></li>
+                    <li><span>Object storage</span><a href="https://cloud.tencent.com/">腾讯云</a></li>
+                </ul>
             </div>
         </div>
         <div class="link">
-
+            <div class="website">
+                <p>站点</p>
+                <ul>
+                    <li>
+                        <img src="https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/%E5%8F%8B%E9%93%BE%2FGCI66_OWsAEcqFY.webp" alt="">
+                        <a href="/">Alice的工具夹</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="friend">
+                <p>友链</p>
+                <ul>
+                    <li><a href="/">暂无（悲）</a></li>
+                </ul>
+            </div>
         </div>
     </div>
     <div class="webRelevant">
         <p>Theme is <a href="https://github.com/sooooooooooooooooootheby/hexo-theme-vitepress" target="_blank">theme-vitepress</a> by <a href="<%= config.url %>" target="_blank"><%= config.author %></a></p>
         <p>Powered by <a href="https://hexo.io/" target="_blank" rel="nofollow">hexo</a> &copy; <%- date(Date.now(), 'YYYY') %></p>
-        <p><a class="moeICP" href="https://icp.gov.moe/?keyword=20240328" target="_blank">♥萌ICP备20240328号♥</a></p>
+        <p class="moeICP">
+            <a href="https://icp.gov.moe/?keyword=20240328" target="_blank">♥萌ICP备20240328号♥</a>
+             | 
+             <a href="https://travel.moe/go.html" title="异次元之旅-跃迁-我们一起去萌站成员的星球旅行吧！" target="_blank"><img src="https://travel.moe/images/icon/icon64.png">异次元之旅</a></p>
     </div>
 </footer>

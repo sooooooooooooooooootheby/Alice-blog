@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "736712",
+      "name": "gmail",
+      "font_class": "gmail",
+      "unicode": "e6a5",
+      "unicode_decimal": 59045
+    },
+    {
       "icon_id": "1899068",
       "name": "telegram",
       "font_class": "telegram",

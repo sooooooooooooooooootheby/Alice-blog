@@ -7,26 +7,92 @@ footer
     display: flex
     justify-content: center
     align-items: center
-    background-color: #839476
+    background-color var(--footer-background-color)
+    border-top 1px solid var(--footer-border-top)
     .info
         width 30%
-        height: 100px
-        // background-color: red
+        height: auto
+        padding: 18px
         .title
             display: flex
+            align-items: center
             img
-                width 92px
-                height: 92px
+                width 64px
+                height: 64px
+                margin: 0px 10px
                 background-color: #FFFFFF
-                border-radius: 92px
+                border-radius: 64px
             p
                 color: #FFFFFF
                 font-size: 30px
                 font-family: Noto-Blod
+        .text
+            margin: 10px
+            p
+                font-size: 14px
+                color: #FFFFFF
+            span
+                display: flex
+                align-items: center
+                padding: 8px
+                font-size: 14px
+                color: #FFFFFF
+                svg
+                    margin: 0 16px
+                    font-size: 20px
+        .support
+            color: #FFFFFF
+            p
+                font-size: 14px
+            ul
+                display: flex
+                flex-wrap: wrap
+                li 
+                    margin: 5px
+                    font-size: 12px
+                    display: block
+                    list-style none
+                    span
+                        padding: 3px 6px
+                        border-radius: 6px 0px 0px 6px
+                        background-color: #612A3D
+                    a
+                        padding: 3px 6px
+                        text-decoration: none
+                        color: #FFFFFF
+                        border-radius: 0px 6px 6px 0px
+                        background-color: #B35353
+                        transition: 0.5s
+                    a:hover
+                        color #612A3D
+
     .link
         width 30%
-        height: 100px
-        // background-color: blue
+        height: auto
+        padding: 18px
+        display: flex
+        justify-content: space-around
+        .website,.friend
+            p
+                color: #FFFFFF
+                margin: 6px 0
+            ul
+                li
+                    display: flex
+                    align-items: center
+                    list-style none
+                    img
+                        width 26px
+                        height: 26px
+                        margin: 0 4px
+                        border-radius: 26px
+                    a
+                        font-size: 14px
+                        color: #FFFFFF
+                        text-decoration: none
+                        transition: 0.5s
+                    a:hover
+                        color #612A3D
             
 
 .webRelevant
@@ -51,3 +117,6 @@ footer
     
     .moeICP
         color: #849476
+        img
+            width 12px
+            height: 12px
