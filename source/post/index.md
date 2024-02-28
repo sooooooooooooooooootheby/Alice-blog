@@ -1,6 +1,7 @@
 ---
 title: Markdown-Demo
 lang: zh-CN
+cover: https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/postCover.webp
 ---
 
 > 这里是修改样式使用的MD样本，想看什么文章在左边找找吧
