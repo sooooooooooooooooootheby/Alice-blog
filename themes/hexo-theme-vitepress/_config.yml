@@ -50,6 +50,20 @@ homeContainer:
     span: sass
     p: 世界上最成熟、最稳定、最强大的专业级CSS扩展语言！
 
+# 页脚
+# 站点
+footerWebsite:
+  -
+    name: Alice的工具夹
+    url: https://tool.sooooooooooooooooootheby.xyz/
+    img: https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/%E5%8F%8B%E9%93%BE%2FGCI66_OWsAEcqFY.webp
+# 友链
+footerfriend:
+  -
+    name: '♥DD创♥'
+    url: https://www.woodude.top/
+    img: https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/%E5%8F%8B%E9%93%BE%2Ffavicon.webp
+
 # 表情包
 meme:
   FRICKMeNot: 'https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/meme%2FFRICKMeNot.png'

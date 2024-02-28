@@ -30,16 +30,27 @@
             <div class="website">
                 <p>站点</p>
                 <ul>
+                <% for (item of theme.footerWebsite) { %>
                     <li>
-                        <img src="https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/%E5%8F%8B%E9%93%BE%2FGCI66_OWsAEcqFY.webp" alt="">
-                        <a href="https://tool.sooooooooooooooooootheby.xyz/">Alice的工具夹</a>
+                        <img src="<%= item.img %>" alt="logo">
+                        <a href="<%= item.url %>">
+                            <%= item.name %>
+                        </a>
                     </li>
+                <% } %>
                 </ul>
             </div>
             <div class="friend">
                 <p>友链</p>
                 <ul>
-                    <li><a href="/">暂无（悲）</a></li>
+                <% for (item of theme.footerfriend) { %>
+                    <li>
+                        <img src="<%= item.img %>" alt="logo">
+                        <a href="<%= item.url %>">
+                            <%= item.name %>
+                        </a>
+                    </li
+                <% } %>
                 </ul>
             </div>
         </div>
