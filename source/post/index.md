@@ -1,7 +1,5 @@
 ---
 title: Markdown-Demo
-date: 0
-time: true
 lang: zh-CN
 ---
 

@@ -1,7 +1,7 @@
 ---
 abbrlink: ""
 categories:
-    - - 前端
+    - 前端
 cover: https://pic.imgdb.cn/item/65ace53b871b83018a1dea7f.png
 date: "2023-12-28T17:07:41.057842+08:00"
 tags:

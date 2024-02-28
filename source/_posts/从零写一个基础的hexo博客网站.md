@@ -1,12 +1,12 @@
 ---
 abbrlink: ''
 categories:
-- - 前端
+ - 前端
 cover: https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/%E4%BB%8E%E9%9B%B6%E5%86%99%E4%B8%80%E4%B8%AA%E5%9F%BA%E7%A1%80%E7%9A%84hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%2Fcover.jpg
 date: '2024-02-07T15:38:19.357193+08:00'
 tags:
-- hexo
-- 博客
+ - hexo
+ - 博客
 title: 从零写一个基础的hexo博客主题
 updated: '2024-02-22T15:05:36.036+08:00'
 ---
