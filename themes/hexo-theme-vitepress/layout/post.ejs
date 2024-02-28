@@ -28,8 +28,8 @@
                                 <%= post.title %>
                             </a>
                         </section>
-                    <% }) %>
-                <% } %>
+                        <% }) %>
+                            <% } %>
             </div>
         </postList>
         <article id="post">
@@ -51,18 +51,19 @@
                     <%- page.content %>
                 </div>
             </div>
+            <%- partial('_partial/valine') %>
         </article>
         <toc id="toc">
             <div class="post-scrollbar" id="post-scrollbar"></div>
             <%- js('js/scrollbar') %>
-            <div class="toc">
-                <p>目录</p>
-                <%- toc(page.content) %>
-            </div>
+                <div class="toc">
+                    <p>目录</p>
+                    <%- toc(page.content) %>
+                </div>
 
-            <div class="jiexika">
-                <img src="<%= url_for('img/jiexika.gif') %>" alt="logo" id="jiexika">
-            </div>
+                <div class="jiexika">
+                    <img src="<%= url_for('img/jiexika.gif') %>" alt="logo" id="jiexika">
+                </div>
         </toc>
     </div>
 </post>
