@@ -41,20 +41,35 @@ document.addEventListener("DOMContentLoaded", function () {
     // 小鹿一键回到顶部
     const jiexika = document.getElementById('jiexika');
     const post = document.getElementById("post");
-    // 小鹿语音
+    // 社恐模式开关
+    let showSwitch = false;
+    const soundSwitch = document.getElementById("soundSwitch");
+    soundSwitch.addEventListener('change', (event) => {
+        if (soundSwitch.checked) {
+            showSwitch = false;
+            return showSwitch;
+        } else {
+            showSwitch = true;
+            return showSwitch;
+        }
+    });
+    // 判断是否处于出现状态
     let shouldExecuteElse = true;
+    // 小鹿语音
     const jiexikaAudio1 = new Audio('https://audio-1315833212.cos.ap-shanghai.myqcloud.com/say-hello.mp3');
     // const jiexikaAudio2 = new Audio('https://audio-1315833212.cos.ap-shanghai.myqcloud.com/Be-serious-Stay-focused.mp3');
     post.addEventListener("scroll", (event) => {
         if (post.scrollTop == 0 && shouldExecuteElse == false) {
             jiexika.classList.remove('showjiexika');
-            // console.log(1);
-            jiexikaAudio1.play();
+            if (showSwitch) {
+                jiexikaAudio1.play();
+            }
             shouldExecuteElse = true;
         } else if (post.scrollTop != 0 && shouldExecuteElse == true){
             jiexika.classList.add('showjiexika');
-            // console.log(2);
-            jiexikaAudio1.play();
+            if (showSwitch) {
+                jiexikaAudio1.play();
+            }
             shouldExecuteElse = false;
         } else {
             return;

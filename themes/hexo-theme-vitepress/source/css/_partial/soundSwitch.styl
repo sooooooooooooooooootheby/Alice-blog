@@ -1,0 +1,64 @@
+/* The switch - the box around the speaker */
+.toggleSwitch
+  width 20px
+  height 20px
+  position relative
+  display flex
+  align-items center
+  justify-content center
+  background-color rgb(39, 39, 39)
+  border-radius 50%
+  cursor pointer
+  transition-duration 0.3s
+  overflow hidden
+
+/* Hide default HTML checkbox */
+#soundSwitch
+  display none
+
+.bell
+  width 18px
+
+.bell path
+  fill white
+
+.speaker
+  width 100%
+  height 100%
+  display flex
+  align-items center
+  justify-content center
+  z-index 2
+  transition-duration 0.3s
+
+.speaker svg
+  width 10px
+
+.mute-speaker
+  position absolute
+  width 100%
+  height 100%
+  display flex
+  align-items center
+  justify-content center
+  opacity 0
+  z-index 3
+  transition-duration 0.3s
+
+.mute-speaker svg
+  width 10px
+
+#soundSwitch:checked +.toggleSwitch .speaker
+  opacity 0
+  transition-duration 0.3s
+
+#soundSwitch:checked +.toggleSwitch .mute-speaker
+  opacity 1
+  transition-duration 0.3s
+  background-color rgb(255, 106, 106)
+
+#soundSwitch:active + .toggleSwitch
+  transform scale(0.7)
+
+#soundSwitch:hover + .toggleSwitch
+  background-color rgb(61, 61, 61)
