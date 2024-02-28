@@ -2,8 +2,11 @@
 <script>
     new Valine({
         el: '#vcomments',
-        appId: 'oiMwEQjnLkcATBsd7rmnxwCf-gzGzoHsz',
-        appKey: 'nxYKJ10KXUR23EROEtXI3qBK',
+        appId: '<%- theme.valine.appid %>',
+        appKey: '<%- theme.valine.appkey %>',
+        placeholder: '<%- theme.valine.placeholder %>',
+        notify: true, // 邮件提醒!!!
+        verify: true, // 验证码
         recordIP: true,
         enableQQ: true,
         emojiMaps: {
@@ -74,5 +77,5 @@
             "vertinstare": "https://pic.yupoo.com/ririsukokoromu/67e80e6b/76d49c1c.png",
             "VoyagerNoises": "https://pic.yupoo.com/ririsukokoromu/1ec60677/5ff12add.png",
         },
-    })
+    });
 </script>
