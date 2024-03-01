@@ -6,6 +6,27 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "2076434",
+      "name": "关闭实心",
+      "font_class": "guanbishixin",
+      "unicode": "e8dc",
+      "unicode_decimal": 59612
+    },
+    {
+      "icon_id": "4649451",
+      "name": "正确实心",
+      "font_class": "zhengqueshixin",
+      "unicode": "e909",
+      "unicode_decimal": 59657
+    },
+    {
+      "icon_id": "5993150",
+      "name": "复制",
+      "font_class": "fuzhi",
+      "unicode": "ec7a",
+      "unicode_decimal": 60538
+    },
+    {
       "icon_id": "736712",
       "name": "gmail",
       "font_class": "gmail",
