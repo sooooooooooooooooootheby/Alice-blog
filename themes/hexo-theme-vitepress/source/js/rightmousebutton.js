@@ -6,15 +6,18 @@ window.oncontextmenu = function (e) {
 const rightmousebutton = document.getElementById("rightmousebutton");
 const mouseEnvelop = document.getElementById("mouseEnvelop");
 const projector = document.getElementById("projector");
+const body = document.body;
 
 window.onmousedown = function (e) {
     if (e.button == 2) {
         mouseEnvelop.style.display = "block";
+        body.style.cursor = 'none';
     }
 };
 rightmousebutton.onmousedown = function (e) {
     if (e.button == 0 || e.button == 2) {
         mouseEnvelop.style.display = "none";
+        body.style.cursor = "url('../img/1.cur'), auto";
     }
 };
 

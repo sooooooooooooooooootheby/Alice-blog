@@ -12,7 +12,6 @@
     "version": "7.0.0"
   },
   "dependencies": {
-    "gsap": "^3.12.4",
     "hexo": "^7.0.0",
     "hexo-browsersync": "^0.3.0",
     "hexo-cli": "^4.3.1",
