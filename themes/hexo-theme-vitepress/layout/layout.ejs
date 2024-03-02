@@ -2,6 +2,7 @@
 <html lang="zh_Hans">
 <%- partial('_partial/head') %>
 <body>
+    <%- partial('_partial/rightmousebutton') %>
     <div class="container">
     <%- partial('_partial/header') %>
     <%- body %>
@@ -9,7 +10,7 @@
     
     <!-- 图标引入 -->
     <%- js('icon/iconfont.js') %>
-    <!-- 杂项js引入 -->
+    <!-- 设备信息引入 -->
     <%- js('js/device.js') %>
     <!-- 代码块复制 -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
