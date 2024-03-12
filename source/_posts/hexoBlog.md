@@ -2,7 +2,7 @@
 abbrlink: ''
 categories:
  - 前端
-cover: https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/%E4%BB%8E%E9%9B%B6%E5%86%99%E4%B8%80%E4%B8%AA%E5%9F%BA%E7%A1%80%E7%9A%84hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%2Fcover.jpg
+cover: https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/hexoBlog/cover.webp
 date: '2024-02-07T15:38:19.357193+08:00'
 tags:
  - hexo
@@ -55,7 +55,7 @@ pnpm install
 hexo c ; hexo g ; hexo s
 ```
 
-![初始hexo博客](https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/%E4%BB%8E%E9%9B%B6%E5%86%99%E4%B8%80%E4%B8%AA%E5%9F%BA%E7%A1%80%E7%9A%84hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%2Fhexo1.png)
+![初始hexo博客](https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/hexoBlog/hexoBlog1.png)
 
 此时博客项目的目录如下
 
@@ -301,7 +301,7 @@ deploy:
 
 这时不需要重启服务器，直接在浏览器中刷新即可看见效果了。
 
-![首页](https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/%E4%BB%8E%E9%9B%B6%E5%86%99%E4%B8%80%E4%B8%AA%E5%9F%BA%E7%A1%80%E7%9A%84hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%2Fhexo2.png)
+![首页](https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/hexoBlog/hexoBlog2.png)
 
 # 编写导航栏和页脚
 
@@ -366,7 +366,7 @@ deploy:
 
 这样，我们就能得到一个简单的包含导航栏和页脚的简单页面
 
-![包含导航栏页脚的简单页面](https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/%E4%BB%8E%E9%9B%B6%E5%86%99%E4%B8%80%E4%B8%AA%E5%9F%BA%E7%A1%80%E7%9A%84hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%2Fhexo3.png)
+![包含导航栏页脚的简单页面](https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/hexoBlog/hexoBlog3.png)
 
 # 添加主题配置
 
@@ -800,7 +800,7 @@ post
 
 至此，一个基础的hexo博客主题就写完了，本教程完整目录如下。
 
-![完整目录](https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/%E4%BB%8E%E9%9B%B6%E5%86%99%E4%B8%80%E4%B8%AA%E5%9F%BA%E7%A1%80%E7%9A%84hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%2Fhexo4.png)
+![完整目录](https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/hexoBlog/hexoBlog4.png)
 
 >最后再贴一遍代码链接:https://github.com/sooooooooooooooooootheby/hexo-theme-vitepress/tree/main/hexoDemo
 

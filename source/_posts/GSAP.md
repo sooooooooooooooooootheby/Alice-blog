@@ -2,7 +2,7 @@
 abbrlink: ""
 categories:
     - 前端
-cover: https://pic.imgdb.cn/item/65ace53b871b83018a1dea7f.png
+cover: https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/GSAP/cover.webp
 date: "2023-12-28T17:07:41.057842+08:00"
 tags:
     - GSAP
@@ -194,7 +194,7 @@ gsap.to(".box", {
 
 [官方的曲线实验场](https://gsap.com/resources/getting-started/Easing)
 
-![easing](https://pic.imgdb.cn/item/65ace7f4871b83018a2794e0.png)
+![easing](https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/GSAP/GSAP1.png)
 
 ### Staggers
 
