@@ -1,11 +1,11 @@
 ---
 abbrlink: ''
 categories: []
-cover: https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/fonttool%2Fcover.jpg
+cover: https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/fonttool%2Fcover.webp
 date: '2024-03-11T17:45:23.168226+08:00'
 tags: []
 title: 给你的字体瘦身
-updated: '2024-03-11T18:24:47.481+08:00'
+updated: '2024-03-12T13:01:06.049+08:00'
 ---
 # 前言
 
