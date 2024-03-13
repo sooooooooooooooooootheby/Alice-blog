@@ -98,6 +98,7 @@ code
 
 figure
     padding 16px
+    margin 10px 0
     background-color var(--article-figure-background-color)
     border-radius 12px
     overflow scroll
@@ -153,8 +154,8 @@ pre .keyword, pre .javascript .function
     right: 12px;
     top: 12px;
     cursor: pointer;
-    background-color: #F6F6F7;
-    border: 1px solid #e2e2e3
+    background-color: var(--post-copy-background-color);
+    border: 1px solid var(--post-copy-border)
     border-radius: 4px
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -183,7 +184,7 @@ pre .keyword, pre .javascript .function
             color: #d5d5d5
 
 .code-wrapper .btn-copy:hover {
-    background-color: #fff;
+    background-color: var(--post-copy-background-color-hover)
 }
 
 // 表格
