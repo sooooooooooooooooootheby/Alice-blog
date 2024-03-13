@@ -19,7 +19,10 @@ updated: '2024-03-12T13:04:41.473+08:00'
 
 本文不介绍菜单（这个东西没什么好说了，九六个a标签围一圈加个触发动画），主要说说这个跟随鼠标移动的聚光灯是怎么做到的
 
-![ttloli](https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/ttloli/ttloli1.png)
+<a href="https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/ttloli/ttloli1.png" data-fancybox data-caption="Single image">
+  <img src="https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/ttloli/ttloli1.png" />
+</a>
+
 
 当我们移动鼠标的时候，会发现 class为 `large`的div的style一直在变化，主要为 `left`,`top`,`background-position`三个属性。
 
@@ -92,4 +95,7 @@ document.onmousemove = function (event) {
 
 至此，一个右键的聚光灯效果就做完了，如果有需要可以把负责播放音效的两行代码注释掉，放入你的音效链接，就开始开启社死效果了（
 本文代码效果
-![code](https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/ttloli/ttloli2.gif)
+
+<a href="https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/ttloli/ttloli2.gif" data-fancybox data-caption="结果预览">
+  <img src="https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/ttloli/ttloli2.gif" />
+</a>

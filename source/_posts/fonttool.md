@@ -45,7 +45,9 @@ fonttools subset "$input_file" --text-file="$text_file" --output-file="$output_f
 fonttools subset "SourceHanSans-Bold.otf" --text-sile="3500.txt" --output-file="SourceHanSans-Bold-compress.otf"
 ```
 
-![取子集](https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/fonttool%2FPixPin_2024-03-11_17-28-04.png)
+<a href="https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/fonttool/fonttool1.png" data-fancybox data-caption="取子集">
+  <img src="https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/fonttool/fonttool1.png" />
+</a>
 
 命令解释：
 
@@ -74,7 +76,9 @@ fonttools ttLib.woff2 compress "SourceHanSans-Bold-compress.otf" -o "SourceHanSa
 
 这里可能会出现报错，原因是缺少了 `brotli`库。
 
-![brotli](https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/fonttool%2FPixPin_2024-03-11_17-28-35.png)
+<a href="https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/fonttool/fonttool2.png" data-fancybox data-caption="安装brotli库">
+  <img src="https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/fonttool/fonttool2.png" />
+</a>
 
 ```shell
 // 安装brotli库
@@ -84,10 +88,14 @@ pip install brotli
 
 安装完成后再次执行即可。
 
-![woff2](https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/fonttool%2FPixPin_2024-03-11_17-29-11.png)
+<a href="https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/fonttool/fonttool3.png" data-fancybox data-caption="转格式为WOFF2">
+  <img src="https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/fonttool/fonttool3.png" />
+</a>
 
 # 总结
 
 本文以思源黑体（SourceHanSans-Bold.otf）举例，成功地从17.5MB压缩到了781KB，压缩了95.53%，既减轻了服务器的压力，也能加快客户端的加载。
 
-![mb](https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/fonttool%2FPixPin_2024-03-11_17-29-41.png)
+<a href="https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/fonttool/fonttool4.png" data-fancybox data-caption="压缩结果">
+  <img src="https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/fonttool/fonttool4.png" />
+</a>

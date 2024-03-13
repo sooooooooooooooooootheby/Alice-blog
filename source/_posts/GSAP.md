@@ -194,7 +194,9 @@ gsap.to(".box", {
 
 [官方的曲线实验场](https://gsap.com/resources/getting-started/Easing)
 
-![easing](https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/GSAP/GSAP1.png)
+<a href="https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/GSAP/GSAP1.png" data-fancybox data-caption="官方曲线试验场">
+  <img src="https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/GSAP/GSAP1.png" />
+</a>
 
 ### Staggers
 

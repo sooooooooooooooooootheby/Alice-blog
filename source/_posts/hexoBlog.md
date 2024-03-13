@@ -55,7 +55,9 @@ pnpm install
 hexo c ; hexo g ; hexo s
 ```
 
-![初始hexo博客](https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/hexoBlog/hexoBlog1.png)
+<a href="https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/hexoBlog/hexoBlog1.png" data-fancybox data-caption="初始页面">
+  <img src="https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/hexoBlog/hexoBlog1.png" />
+</a>
 
 此时博客项目的目录如下
 
@@ -301,7 +303,9 @@ deploy:
 
 这时不需要重启服务器，直接在浏览器中刷新即可看见效果了。
 
-![首页](https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/hexoBlog/hexoBlog2.png)
+<a href="https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/hexoBlog/hexoBlog2.png" data-fancybox data-caption="第一个页面">
+  <img src="https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/hexoBlog/hexoBlog2.png" />
+</a>
 
 # 编写导航栏和页脚
 
@@ -366,7 +370,9 @@ deploy:
 
 这样，我们就能得到一个简单的包含导航栏和页脚的简单页面
 
-![包含导航栏页脚的简单页面](https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/hexoBlog/hexoBlog3.png)
+<a href="https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/hexoBlog/hexoBlog3.png" data-fancybox data-caption="包含导航栏页脚的简单页面">
+  <img src="https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/hexoBlog/hexoBlog3.png" />
+</a>
 
 # 添加主题配置
 
@@ -800,7 +806,9 @@ post
 
 至此，一个基础的hexo博客主题就写完了，本教程完整目录如下。
 
-![完整目录](https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/hexoBlog/hexoBlog4.png)
+<a href="https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/hexoBlog/hexoBlog4.png" data-fancybox data-caption="完整目录">
+  <img src="https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/hexoBlog/hexoBlog4.png" />
+</a>
 
 >最后再贴一遍代码链接:https://github.com/sooooooooooooooooootheby/hexo-theme-vitepress/tree/main/hexoDemo
 

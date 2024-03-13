@@ -74,6 +74,7 @@ console.log(console.log(console.log(console.log(console.log(console.log(console.
 横图，图源[@小鱼灵](https://x.com/LittleFishSoul/status/1754119644368269785?s=20)
 ![横图](https://test-1315833212.cos.ap-shanghai.myqcloud.com/%E6%A8%AA%E5%9B%BE.jpg)
 
+
 # 表格
 | 左对齐 | 右对齐 | 居中对齐 |
 | :-----| ----: | :----: |
