@@ -91,3 +91,5 @@ document.onmousemove = function (event) {
 ```
 
 至此，一个右键的聚光灯效果就做完了，如果有需要可以把负责播放音效的两行代码注释掉，放入你的音效链接，就开始开启社死效果了（
+本文代码效果
+![code](https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/ttloli/ttloli2.gif)
