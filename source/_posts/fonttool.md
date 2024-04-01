@@ -99,3 +99,22 @@ pip install brotli
 <a href="https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/fonttool/fonttool4.png" data-fancybox data-caption="压缩结果">
   <img src="https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/fonttool/fonttool4.png" />
 </a>
+
+# 可能出现的问题
+
+## 安装完fonttools后显示找不到
+
+<a href="https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/fonttool/fonttool5.png" data-fancybox data-caption="shell报错">
+  <img src="https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/fonttool/fonttool5.png" />
+</a>
+
+原因： 这是因为环境变量中没有python脚本的路径，即使再次卸载安装命令行也会显示找不到路径。
+
+解决：
+按下`win+s`搜索`环境变量`，打开之后点击`环境变量`，在`系统变量`中寻找并双击编辑`Path`，添加上python脚本的路径即可。
+
+(python脚本的路径输入`pip install fonttools`再次安装就会显示出来。)
+
+<a href="https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/fonttool/fonttool6.png" data-fancybox data-caption="shell报错">
+  <img src="https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/fonttool/fonttool6.png" />
+</a>
