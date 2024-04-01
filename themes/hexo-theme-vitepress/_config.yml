@@ -5,14 +5,10 @@ menu:
 
 #社交链接
 link:
-  - 
+  -
     name: Github
     url: https://github.com/sooooooooooooooooootheby
     icon: github2
-  - 
-    name: Discord
-    url: https://discord.gg/BuegG6aT
-    icon: discord
 
 #主页介绍
 homeIntroduce:
@@ -54,7 +50,7 @@ homeContainer:
 # 站点
 footerWebsite:
   -
-    name: Alice的工具夹
+    name: Alice's SourceGather
     url: https://tool.sooooooooooooooooootheby.xyz/
     img: https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/%E5%8F%8B%E9%93%BE%2FGCI66_OWsAEcqFY.webp
 # 友链
