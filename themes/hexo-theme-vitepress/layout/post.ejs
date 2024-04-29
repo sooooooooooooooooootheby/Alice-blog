@@ -4,10 +4,10 @@
             <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-caidan_o"></use>
             </svg>
-            文章列表
+            🧾文章列表
         </button>
         <label for="postTocSwitch">
-            目录
+            🗒目录
             <svg class="icon" id="tocIcon" aria-hidden="true">
                 <use xlink:href="#icon-jiantou"></use>
             </svg>
@@ -19,7 +19,7 @@
         <postList id="postList">
             <div class="list" id="list" onclick="event.stopPropagation()">
                 <span>
-                    <a href="/post">文章列表</a>
+                    <a href="/post">🧾文章列表</a>
                 </span>
                 <% if (site.posts && site.posts.length) { %>
                     <% site.posts.each(function (post) { %>
@@ -57,7 +57,7 @@
             <div class="post-scrollbar" id="post-scrollbar"></div>
             <%- js('js/scrollbar') %>
                 <div class="toc">
-                    <p>目录</p>
+                    <p>🗒目录</p>
                     <%- toc(page.content) %>
                 </div>
 
