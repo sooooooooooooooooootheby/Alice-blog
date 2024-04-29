@@ -45,6 +45,10 @@ homeContainer:
     svg: sass
     span: sass
     p: 世界上最成熟、最稳定、最强大的专业级CSS扩展语言！
+  -
+    svg: Nodejs
+    span: Node.js
+    p: 免费、开源、跨平台的 JavaScript 运行时环境
 
 # 页脚
 # 站点
