@@ -4,15 +4,15 @@
             <div class="homeMain">
                 <span><%= theme.homeIntroduce.one %></span>
                 <p><%= theme.homeIntroduce.p1 %></p>
-                <p class="tagline"><%= theme.homeIntroduce.p2 %> <img id="randomEmoji" src="https://pic.yupoo.com/ririsukokoromu/f986fbd7/e6d2dc88.gif" alt=""></p>
+                <p class="tagline"><%= theme.homeIntroduce.p2 %> <img id="randomEmoji" src="https://pic.yupoo.com/ririsukokoromu/f986fbd7/e6d2dc88.gif" alt="" /></p>
                 <div class="buttonBox">
                     <% for (item of theme.homeButton) { %>
-                        <div class="button <%= item.buttonType %>"><a href="<%= item.url %>"><%= item.name %></a></div>
+                    <div class="button <%= item.buttonType %>"><a href="<%= item.url %>"><%= item.name %></a></div>
                     <% } %>
                 </div>
             </div>
             <div class="homeLogo">
-                <img src="<%= url_for('img/logo.webp') %>" alt="logo">
+                <img src="<%= url_for('img/logo.webp') %>" alt="logo" />
                 <div></div>
             </div>
         </div>
@@ -20,18 +20,22 @@
     <div class="homeContainer">
         <ul>
             <li>
-                <img src="http://pic.yupoo.com/ririsukokoromu/338b83ac/9d4828fa.png" alt="logo">
-                <span>我会什么呢</span>
-                <p><del>我会玩重返未来:1999，我是1999高手！</del></p>
+                <img src="http://pic.yupoo.com/ririsukokoromu/338b83ac/9d4828fa.png" alt="logo" />
+                <div>
+                    <span>我会什么呢</span>
+                    <p><del>我会玩重返未来:1999，我是1999高手！</del></p>
+                </div>
             </li>
             <% for (item of theme.homeContainer) { %>
-                <li>
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-<%= item.svg %>"></use>
-                    </svg>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-<%= item.svg %>"></use>
+                </svg>
+                <div>
                     <span><%= item.span %></span>
                     <p><%= item.p %></p>
-                </li>
+                </div>
+            </li>
             <% } %>
         </ul>
     </div>

@@ -105,7 +105,7 @@ home
 
         ul
             display grid
-            grid-template-columns 1fr 1fr 1fr 1fr
+            grid-template-columns 1fr 1fr 1fr
             max-width 1152px
             padding 0 64px
             margin 0 auto
@@ -117,23 +117,25 @@ home
                 background-color var(--home-Container-li-background-color)
                 border-radius 12px
                 display flex
-                flex-direction column
 
                 img,svg
                     width 40px
                     height 40px
+                    flex-shrink 0
                     padding 8px
                     margin-bottom 20px
                     background-color var(--home-Container-img-background-color)
                     border-radius 6px
 
-                span
-                    color var(--home-Container-span-color)
-                    font-family Noto-Bold
-                    font-size 16px
+                div
+                    margin-left: 8px
+                    span
+                        color var(--home-Container-span-color)
+                        font-family Noto-Bold
+                        font-size 16px
 
-                p
-                    margin-top 8px
-                    color var(--home-Container-p-color)
-                    font-family Noto-Medium
-                    font-size 14px
+                    p
+                        margin-top 8px
+                        color var(--home-Container-p-color)
+                        font-family Noto-Medium
+                        font-size 14px
