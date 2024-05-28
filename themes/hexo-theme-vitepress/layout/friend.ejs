@@ -1,0 +1,20 @@
+<div class="friend">
+    <div class="title">☄️Friend</div>
+    <div class="content">They're my friends!</div>
+    <ul>
+        <% for (item of theme.footerfriend) { %>
+        <li>
+            <div class="left">
+                <span><%= item.name %></span>
+                <a href="<%= item.url %>">
+                    <img src="<%= item.logo %>" alt="">
+                    <p><%= item.url %></p>
+                </a>
+            </div>
+            <div class="right">
+                <img src="<%= item.head %>" alt="头像" />
+            </div>
+        </li>
+        <% } %>
+    </ul>
+</div>

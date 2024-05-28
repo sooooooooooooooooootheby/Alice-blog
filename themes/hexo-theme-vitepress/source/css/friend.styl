@@ -1,0 +1,76 @@
+.friend {
+    width: 820px;
+    height: calc(100vh - 105px);
+    padding: 20px 10px;
+    margin: 0 auto;
+
+    .title {
+        font-size: 26px;
+        font-weight: bold;
+        color: #3C3C43;
+    }
+
+    .content {
+        margin-left: 38px;
+        font-size: 18px;
+        color: #3C3C43C7;
+    }
+
+    ul {
+        margin-top: 60px;
+
+        li {
+            height: 128px;
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+            border: 1px solid rgba(165, 165, 165, 0.2);
+            border-radius: 4px;
+
+            .left {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                padding: 10px;
+
+                span {
+                    font-size: 16px;
+                    color: #3C3C43;
+                }
+
+                a {
+                    height: 24px;
+                    display: flex;
+                    color: #3C3C43C7;
+
+                    img {
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 24px;
+                    }
+
+                    p {
+                        line-height: 24px;
+                        margin-left: 4px;
+                    }
+                }
+            }
+
+            .right {
+                width: 200px;
+                height: 100%;
+                position: relative;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    position: absolute;
+                    top: -50%;
+                    right: 0;
+                }
+            }
+        }
+    }
+}

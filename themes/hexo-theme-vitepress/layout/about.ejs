@@ -11,13 +11,13 @@
         <% for (item of theme.link) { %>
         <li>
             <div class="left">
-                <span>sooooooooooooooooootheby - Github</span>
-                <p>Hi my friend 👋 Welcome my Github 🎉</p>
+                <span><%= item.name %> - <%= item.website %></span>
+                <p><%= item.introduction %></p>
                 <a href="<%= item.url %>">
                     <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-<%= item.icon %>"></use>
                     </svg>
-                    <p>https://github.com/sooooooooooooooooootheby</p>
+                    <p><%= item.url %></p>
                 </a>
             </div>
             <div class="right">

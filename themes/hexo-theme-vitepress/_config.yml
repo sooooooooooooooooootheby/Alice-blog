@@ -2,12 +2,15 @@
 menu:
   🌈Home: /
   📰Post: /post
-  👻about: /about
+  👻About: /about
+  ☄️Friend: /friend
 
 #社交链接
 link:
   -
-    name: Github
+    name: sooooooooooooooooootheby
+    website: Github
+    introduction: Hi my friend 👋 Welcome my Github 🎉
     url: https://github.com/sooooooooooooooooootheby
     icon: github2
     img: https://avatars.githubusercontent.com/u/120046369
@@ -64,8 +67,9 @@ footerfriend:
   -
     name: '♥DD创♥'
     url: https://www.woodude.top/
-    img: https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/%E5%8F%8B%E9%93%BE%2Ffavicon.webp
-
+    logo: https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/%E5%8F%8B%E9%93%BE%2Ffavicon.webp
+    head: https://www.notion.so/image/https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F80524293%3Fv%3D4%3Fs%3D400?table=block&id=021ad5fa-71a6-4150-9422-462fac15e707&cache=v2
+    
 # 表情包
 meme:
   FRICKMeNot: 'https://blogimage-1315833212.cos.ap-shanghai.myqcloud.com/meme%2FFRICKMeNot.png'
