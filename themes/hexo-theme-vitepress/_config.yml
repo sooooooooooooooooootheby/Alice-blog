@@ -2,6 +2,7 @@
 menu:
   🌈Home: /
   📰Post: /post
+  👻about: /about
 
 #社交链接
 link:
@@ -9,6 +10,7 @@ link:
     name: Github
     url: https://github.com/sooooooooooooooooootheby
     icon: github2
+    img: https://avatars.githubusercontent.com/u/120046369
 
 #主页介绍
 homeIntroduce:

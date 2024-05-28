@@ -1,0 +1,29 @@
+<div class="about">
+    <span class="title">👻 About</span>
+    <p class="content">
+        User from <span id="device"></span>.
+        <br />
+        Welcome Wonderland! This is my Blog.
+        <br />
+        This website stores my study materials.
+    </p>
+    <ul>
+        <% for (item of theme.link) { %>
+        <li>
+            <div class="left">
+                <span>sooooooooooooooooootheby - Github</span>
+                <p>Hi my friend 👋 Welcome my Github 🎉</p>
+                <a href="<%= item.url %>">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-<%= item.icon %>"></use>
+                    </svg>
+                    <p>https://github.com/sooooooooooooooooootheby</p>
+                </a>
+            </div>
+            <div class="right">
+                <img src="<%= item.img %>" alt="头像" />
+            </div>
+        </li>
+        <% } %>
+    </ul>
+</div>

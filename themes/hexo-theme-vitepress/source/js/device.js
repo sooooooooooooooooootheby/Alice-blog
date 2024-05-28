@@ -30,6 +30,6 @@ if (/OPR/i.test(userAgent)) {
     deviceBrowser = "Unknown";
 }
 
-let welcome = deviceOS + '的' + deviceBrowser
+let welcome = deviceOS + `' ` + deviceBrowser
 let device = document.getElementById('device');
 device.innerHTML = welcome
