@@ -28,6 +28,8 @@
             list-style: none;
             border: 1px solid var(--border);
             border-radius: 4px;
+            overflow: hidden;
+            position: relative;
 
             .left {
                 display: flex;
@@ -61,15 +63,15 @@
             .right {
                 width: 200px;
                 height: 100%;
-                position: relative;
+                position: absolute;
+                right: 0;
+                top: 0;
                 overflow: hidden;
+                z-index: -99;
 
                 img {
                     width: 100%;
-                    height: auto;
-                    position: absolute;
-                    top: -50%;
-                    right: 0;
+                    margin-top: -25%;
                 }
             }
         }
